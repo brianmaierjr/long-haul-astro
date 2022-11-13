@@ -4,7 +4,7 @@ TABLE STYLES
 
 table {
     width: 100%;
-    margin-bottom: 1.5em;
+    margin-bottom: var(--space-m);
     border-collapse: collapse;
 
     caption {
@@ -29,7 +29,7 @@ tr {
 td,
 th {
     text-align: left;
-    padding: 0.5em;
+    padding: var(--space-2xs);
 }
 
 th {

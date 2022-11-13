@@ -47,8 +47,13 @@ const menuitems = [
         background-position: center center;
         color: white;
         padding: 0;
-        height: 4em;
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1em), 0 100%);
+        height: var(--space-2xl);
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - var(--space-s)),
+            0 100%
+        );
 
         .container {
             padding: 0;
@@ -58,9 +63,9 @@ const menuitems = [
         h1 {
             margin: 0;
             float: left;
+            font-size: var(--step-0);
             padding-left: 2rem;
-            font-size: 1em;
-            line-height: 3em;
+            line-height: var(--space-xl);
             font-family: $sans-serif;
             font-weight: 800;
             text-transform: uppercase;
@@ -76,8 +81,14 @@ const menuitems = [
         .header {
             height: 15em;
             position: relative;
-            padding-bottom: 2em;
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5em), 0 100%);
+            padding-bottom: var(--space-l);
+            margin-bottom: var(--space-l);
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% calc(100% - var(--space-l)),
+                0 100%
+            );
 
             .container {
                 position: relative;
@@ -88,9 +99,9 @@ const menuitems = [
             }
 
             h1 {
-                font-size: 3em;
+                font-size: var(--step-5);
                 line-height: 1;
-                letter-spacing: -3px;
+                letter-spacing: -1.5px;
                 padding-left: 0;
             }
 
@@ -103,7 +114,7 @@ const menuitems = [
 
                     li {
                         display: inline;
-                        line-height: 3em;
+                        line-height: var(--space-xl);
                         background: none;
                         padding: 0 5px;
                         border: none;
@@ -112,7 +123,7 @@ const menuitems = [
                             color: white;
                             font-size: 0.9em;
                             text-decoration: none;
-                            padding: 0 0.25em;
+                            padding: 0 0 var(--space-3xs);
 
                             &:hover {
                                 color: darken(white, 20%);
@@ -120,7 +131,7 @@ const menuitems = [
                         }
 
                         &.current {
-                            padding-bottom: 0.25em;
+                            padding-bottom: 0 var(--space-3xs);
                             border-bottom: 4px solid rgba(255, 255, 255, 0.4);
                         }
                     }

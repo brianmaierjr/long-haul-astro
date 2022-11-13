@@ -10,13 +10,13 @@ BUTTON DEFAULTS
     text-decoration: none;
     color: $white;
     font-size: var(--step-0);
-    line-height: 1.2em;
+    line-height: var(--space-s);
     font-weight: normal;
-    padding: 0.5em 1.5em;
+    padding: var(--space-2xs) var(--space-m);
     border: 0;
     border-radius: 4px;
     cursor: pointer;
-    margin-bottom: 0.5em;
+    margin-bottom: var(--space-2xs);
     transition: background-color 0.14s ease-in-out;
 
     // hovering on the btn

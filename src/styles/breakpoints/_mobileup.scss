@@ -22,7 +22,7 @@ body {
 
     p,
     ul {
-        margin: 0 0 2rem;
+        margin: 0 0 var(--space-l);
     }
 }
 
@@ -49,7 +49,7 @@ object {
 // Layout
 .container {
     max-width: 610px;
-    padding: 0 20px;
+    padding: 0 var(--space-s);
     margin-left: auto;
     margin-right: auto;
 }
@@ -90,7 +90,7 @@ MENU STYLING
                 color: white;
                 text-decoration: none;
                 display: block;
-                padding: 5px 2rem;
+                padding: 5px var(--space-l);
             }
         }
     }
@@ -120,11 +120,11 @@ MENU STYLING
     -o-user-select: none;
     user-select: none;
     float: right;
-    line-height: 2em;
-    margin-top: 0.5em;
+    line-height: var(--space-l);
+    margin-top: var(--space-2xs);
     background-color: $background-color;
     border-radius: 4px;
-    padding: 0 0.5em;
+    padding: 0 var(--space-2xs);
     color: white;
     text-decoration: none;
     position: relative;
@@ -142,7 +142,7 @@ PRE STYLING
 ***************/
 
 pre {
-    padding: 2em;
+    padding: var(--space-l);
 }
 
 /***************
@@ -160,7 +160,7 @@ dt {
 }
 
 dd {
-    margin: 0 0 1.5rem;
+    margin: 0 0 var(--space-m);
 }
 
 .post ul ul,
@@ -175,12 +175,12 @@ PAGE STYLES
 ***************/
 
 .pageTitle {
-    margin: 2rem auto 1em;
+    margin: var(--space-l) auto var(--space-s);
     text-align: center;
 }
 
 .content {
-    padding-top: 1em;
+    padding-top: var(--space-s);
 }
 
 /***************
@@ -190,13 +190,13 @@ POST STYLING
 .post {
     .postTitle {
         text-align: center;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
+        margin-top: var(--space-l);
+        margin-bottom: var(--space-s);
     }
 
     blockquote {
         clear: both;
-        margin: 2.5em 0;
+        margin: var(--space-l) 0;
         padding: 0;
         line-height: 1.8;
         position: relative;
@@ -204,7 +204,7 @@ POST STYLING
         &:before {
             content: "";
             position: absolute;
-            top: -1.25em;
+            top: calc(var(--space-s) * -1);
             background: $background-color;
             display: block;
             height: 2px;
@@ -215,7 +215,7 @@ POST STYLING
         &:after {
             content: "";
             position: absolute;
-            bottom: -1.25em;
+            bottom: calc(var(--space-s) * -1);
             background: $background-color;
             display: block;
             height: 2px;
@@ -232,7 +232,7 @@ POST STYLING
     }
 
     figure {
-        margin: 3rem 0;
+        margin: var(--space-xl) 0;
 
         figcaption {
             text-align: center;
@@ -248,26 +248,26 @@ POST STYLING
     }
 
     img {
-        margin-bottom: 2rem;
+        margin-bottom: var(--space-l);
     }
 
     .highlight {
         clear: both;
-        margin-bottom: 2rem;
+        margin-bottom: var(--step)-l;
     }
 
     .dropcap {
         color: $primary-color;
-        margin-right: 0.45rem;
+        margin-right: var(--space-2xs);
         float: left;
         font-size: 5em;
-        margin: 0 0.1em 0 0;
+        margin: 0 var(--space-xs) 0 0;
         line-height: 0.85;
     }
 
     .featuredImage {
         position: relative;
-        margin-top: 2rem;
+        margin-top: var(--space-l);
 
         img {
             margin-bottom: 0;
@@ -397,7 +397,7 @@ POST LIST STYLING
         }
 
         h3 {
-            margin: 0 0 0.5em;
+            margin: 0 0 var(--space-2xs);
         }
     }
 }
