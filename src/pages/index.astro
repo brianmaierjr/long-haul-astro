@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { formatDate } from "../utils/helpers";
+
+const posts = await Astro.glob("./blog/*.md");
+---
+
+<Layout title="Long Haul Astro Theme">
+    <div class="home" id="home">
+        <h1 class="pageTitle">Recent Posts</h1>
+        <div class="posts noList">
+            {
+                posts.map((post) => (
+                    <article>
+                        <span class="date">
+                            {formatDate(post.frontmatter.date)}
+                        </span>
+                        <h3>
+                            <a class="post-link" href={post.url}>
+                                {post.frontmatter.title}
+                            </a>
+                        </h3>
+                        <p>{post.frontmatter.description}</p>
+                    </article>
+                ))
+            }
+        </div>
+    </div>
+</Layout>

@@ -1,0 +1,44 @@
+/***************
+COLOR VARIABLES
+***************/
+
+$white: #fff;
+$silver: #ddd;
+$grey: #aaa;
+$black: #111;
+
+// Color variables
+$primary-color: seagreen;
+$secondary-color: #233e5b;
+$tertiary-color: #aaa;
+$link-color: $primary-color;
+$background-color: $primary-color;
+$bad-color: #ff4136; // Bad color for errors, validation etc.
+$subtle-color: #aaa; // Subtle color for subtle text
+
+/***************
+CONSISTENT SETTINGS
+***************/
+
+$padding: 40px; // Padding and margins
+$line-height: 44px; // Consistent height for buttons, inputs etc.
+
+/***************
+TYPE SETTINGS
+***************/
+
+$sans-serif: "Open Sans", Helvetica, Arial, sans-serif;
+$serif: "PT Serif", Georgia, Times, serif;
+
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1200,22,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+:root {
+    --step--2: clamp(0.78rem, calc(0.75rem + 0.18vw), 0.88rem);
+    --step--1: clamp(0.94rem, calc(0.88rem + 0.3vw), 1.1rem);
+    --step-0: clamp(1.13rem, calc(1.03rem + 0.45vw), 1.38rem);
+    --step-1: clamp(1.35rem, calc(1.22rem + 0.67vw), 1.72rem);
+    --step-2: clamp(1.62rem, calc(1.43rem + 0.96vw), 2.15rem);
+    --step-3: clamp(1.94rem, calc(1.67rem + 1.35vw), 2.69rem);
+    --step-4: clamp(2.33rem, calc(1.96rem + 1.86vw), 3.36rem);
+    --step-5: clamp(2.8rem, calc(2.29rem + 2.54vw), 4.2rem);
+}

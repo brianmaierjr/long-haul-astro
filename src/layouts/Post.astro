@@ -1,0 +1,43 @@
+---
+import "../styles/style.scss";
+import SiteHeader from "../components/Header.astro";
+import SiteFooter from "../components/Footer.astro";
+import { formatDate } from "../utils/helpers";
+
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="js">
+    <body>
+        <SiteHeader />
+        <main class="content">
+            <div class="container">
+                <article class="post">
+                    {frontmatter.image}
+                    {
+                        frontmatter.image && (
+                            <div class="featuredImage">
+                                <img src={`/${frontmatter.image}`} alt="" />
+                            </div>
+                        )
+                    }
+                    <header>
+                        <h1 class="postTitle">{frontmatter.title}</h1>
+                        <p class="meta">
+                            <time>{formatDate(frontmatter.date)}</time>
+                        </p>
+                    </header>
+
+                    <slot />
+
+                    <!-- POST NAVIGATION -->
+                    <footer class="postNav clearfix">
+                        Add Post Navigation
+                    </footer>
+                </article>
+            </div>
+        </main><!-- end .content -->
+        <SiteFooter />
+    </body>
+</html>

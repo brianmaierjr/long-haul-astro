@@ -1,0 +1,172 @@
+/***************
+GLOBAL STYLES
+***************/
+
+.content {
+    padding-top: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+/***************
+HOMEPAGE STYLING
+***************/
+
+#home {
+    .posts,
+    .pageTitle,
+    .pagination {
+        width: 75%;
+        float: none;
+        margin: 0 auto 1.5em;
+    }
+
+    .pageTitle {
+        margin: 2rem auto 1em;
+    }
+}
+
+/***************
+MENU STYLING
+***************/
+
+.js {
+    .nav-collapse {
+        position: relative;
+        max-height: none;
+
+        &.closed {
+            max-height: none;
+        }
+
+        ul li a {
+            display: inline-block;
+        }
+    }
+}
+
+.nav-toggle {
+    display: none;
+}
+
+/***************
+POST STYLING
+***************/
+
+.post {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol,
+    dl,
+    .pageTitle {
+        width: 75%;
+        float: none;
+        margin: 0 auto 2rem;
+    }
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        margin: 1rem auto;
+    }
+
+    .pageTitle {
+        margin: 2rem auto 1em;
+    }
+
+    .featuredImage {
+        position: relative;
+        margin-top: 2rem;
+
+        &:before {
+            background: white;
+            content: "";
+            display: block;
+            width: 100%;
+            height: 4em;
+            position: absolute;
+            top: -2em;
+            left: 0;
+            transform: skewY(-2deg);
+            transform-origin: bottom left;
+        }
+    }
+}
+
+/***************
+POST NAV STYLING
+***************/
+
+.postNav {
+    .prev,
+    .next {
+        width: 50%;
+    }
+
+    .prev {
+        float: left;
+        text-align: left;
+    }
+
+    .next {
+        text-align: right;
+        float: right;
+    }
+}
+
+/***************
+CONTACT PAGE STYLING
+***************/
+
+.contactContent {
+    max-width: 48%;
+    margin-right: 2%;
+    float: left;
+}
+
+#contact {
+    form {
+        max-width: 48%;
+        width: 48%;
+        float: right;
+        margin-right: 0;
+    }
+}
+
+/***************
+DARK THEME STYLING
+***************/
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    .content:after,
+    .post .featuredImage:before {
+        background: black;
+    }
+}

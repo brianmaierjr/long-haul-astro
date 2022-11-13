@@ -1,0 +1,142 @@
+---
+import { settings } from "../data/settings";
+const title = "Long Haul Astro";
+
+const menuitems = [
+    { name: "Home", link: "/" },
+    { name: "About", link: "/about" },
+    { name: "Contact", link: "/contact" },
+    {
+        name: "GitHub",
+        link: "https://github.com/brianmaierjr/long-haul",
+        external: true,
+    },
+    {
+        name: "Download Theme",
+        link: "https://github.com/brianmaierjr/long-haul/archive/master.zip",
+        external: true,
+    },
+];
+---
+
+<header class="header">
+    <div class="container">
+        <h1 class="logo"><a href="/">{title ?? settings.title}</a></h1>
+        <nav class="nav-collapse">
+            <ul class="noList">
+                {
+                    menuitems.map((item, index) => (
+                        <>
+                            <li class="element" key={index}>
+                                <a href={item.link}>{item.name}</a>
+                            </li>
+                        </>
+                    ))
+                }
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<style lang="scss">
+    @use "../styles/_config.scss" as *;
+    .header {
+        background-color: $background-color;
+        background-image: url("../public/images/touring.jpg");
+        background-size: cover;
+        background-position: center center;
+        color: white;
+        padding: 0;
+        height: 4em;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1em), 0 100%);
+
+        .container {
+            padding: 0;
+            max-width: 100%;
+        }
+
+        h1 {
+            margin: 0;
+            float: left;
+            padding-left: 2rem;
+            font-size: 1em;
+            line-height: 3em;
+            font-family: $sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    @media (min-width: 800px) {
+        .header {
+            height: 15em;
+            position: relative;
+            padding-bottom: 2em;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5em), 0 100%);
+
+            .container {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                max-width: 800px;
+                overflow: hidden;
+            }
+
+            h1 {
+                font-size: 3em;
+                line-height: 1;
+                letter-spacing: -3px;
+                padding-left: 0;
+            }
+
+            nav {
+                float: left;
+                clear: left;
+
+                ul {
+                    margin: 0;
+
+                    li {
+                        display: inline;
+                        line-height: 3em;
+                        background: none;
+                        padding: 0 5px;
+                        border: none;
+
+                        a {
+                            color: white;
+                            font-size: 0.9em;
+                            text-decoration: none;
+                            padding: 0 0.25em;
+
+                            &:hover {
+                                color: darken(white, 20%);
+                            }
+                        }
+
+                        &.current {
+                            padding-bottom: 0.25em;
+                            border-bottom: 4px solid rgba(255, 255, 255, 0.4);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Large Header Size
+
+        .header--large {
+            height: 50vh;
+
+            .container {
+                top: 90%;
+                transform: translateY(-100%);
+            }
+        }
+    }
+</style>
