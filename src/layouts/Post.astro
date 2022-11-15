@@ -7,14 +7,12 @@ import { formatDate } from "../utils/helpers";
 const { frontmatter } = Astro.props;
 ---
 
-<!DOCTYPE html>
 <html lang="en" class="js">
     <body>
         <SiteHeader />
         <main class="content">
             <div class="container">
                 <article class="post">
-                    {frontmatter.image}
                     {
                         frontmatter.image && (
                             <div class="featuredImage">
@@ -25,11 +23,14 @@ const { frontmatter } = Astro.props;
                     <header>
                         <h1 class="postTitle">{frontmatter.title}</h1>
                         <p class="meta">
-                            <time>{formatDate(frontmatter.date)}</time>
+                            <time>{formatDate(frontmatter.date)}</time> | <span
+                                id="readingTime"></span> minute read
                         </p>
                     </header>
 
-                    <slot />
+                    <div class="article-content">
+                        <slot />
+                    </div>
 
                     <!-- POST NAVIGATION -->
                     <footer class="postNav clearfix">
@@ -39,5 +40,16 @@ const { frontmatter } = Astro.props;
             </div>
         </main><!-- end .content -->
         <SiteFooter />
+        <script>
+            function readingTime() {
+                const text =
+                    document.querySelector(".article-content").innerText;
+                const wpm = 225;
+                const words = text.trim().split(/\s+/).length;
+                const time = Math.ceil(words / wpm);
+                document.getElementById("readingTime").innerText = time;
+            }
+            readingTime();
+        </script>
     </body>
 </html>

@@ -143,6 +143,7 @@ PRE STYLING
 
 pre {
     padding: var(--space-l);
+    margin: 0 0 2rem 0;
 }
 
 /***************
@@ -267,7 +268,8 @@ POST STYLING
 
     .featuredImage {
         position: relative;
-        margin-top: var(--space-l);
+        margin-top: var(--space-2xs);
+        clip-path: polygon(0 var(--space-s), 100% 0, 100% 100%, 0 100%);
 
         img {
             margin-bottom: 0;

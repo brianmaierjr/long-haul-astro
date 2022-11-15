@@ -5,6 +5,7 @@ export interface Props {
 
 const { title } = Astro.props;
 
+import BaseHead from "../components/BaseHead.astro";
 import SiteHeader from "../components/Header.astro";
 import SiteFooter from "../components/Footer.astro";
 import "../styles/style.scss";
@@ -12,6 +13,7 @@ import "../styles/style.scss";
 
 <!DOCTYPE html>
 <html lang="en" class="js">
+    <BaseHead />
     <body>
         <SiteHeader />
         <main class="content">

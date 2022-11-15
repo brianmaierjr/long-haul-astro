@@ -99,19 +99,6 @@ POST STYLING
     .featuredImage {
         position: relative;
         margin-top: 2rem;
-
-        &:before {
-            background: white;
-            content: "";
-            display: block;
-            width: 100%;
-            height: var(--space-2xl);
-            position: absolute;
-            top: -var(--space-l);
-            left: 0;
-            transform: skewY(-2deg);
-            transform-origin: bottom left;
-        }
     }
 }
 

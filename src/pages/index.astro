@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { formatDate } from "../utils/helpers";
+import { formatDate, getReadingTime } from "../utils/helpers";
 
 const posts = await Astro.glob("./blog/*.md");
 ---
@@ -15,7 +15,7 @@ const posts = await Astro.glob("./blog/*.md");
                         <span class="date">
                             {formatDate(post.frontmatter.date)}
                         </span>
-                        <h3>
+                        <h3 class="h4">
                             <a class="post-link" href={post.url}>
                                 {post.frontmatter.title}
                             </a>
