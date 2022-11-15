@@ -34,6 +34,9 @@ const date = new Date();
                     social.facebook && (
                         <li>
                             <a href={social.facebook.url} target="_blank">
+                                <span class="sr-only">
+                                    Brian Maier on Facebook
+                                </span>{" "}
                                 <svg
                                     id="facebook-square"
                                     class="custom-icon"
@@ -65,6 +68,9 @@ const date = new Date();
                     social.twitter && (
                         <li>
                             <a href={social.twitter.url} target="_blank">
+                                <span class="sr-only">
+                                    Brian Maier on Twitter
+                                </span>
                                 <svg
                                     id="twitter"
                                     class="custom-icon"
@@ -96,6 +102,9 @@ const date = new Date();
                     social.linkedin && (
                         <li>
                             <a href={social.linkedin.url} target="_blank">
+                                <span class="sr-only">
+                                    Brian Maier on LinkedIn
+                                </span>
                                 <svg
                                     id="linkedin"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -127,6 +136,9 @@ const date = new Date();
                     social.github && (
                         <li>
                             <a href={social.github.url} target="_blank">
+                                <span class="sr-only">
+                                    Brian Maier on GitHub
+                                </span>
                                 <svg
                                     id="github"
                                     class="custom-icon"
@@ -161,6 +173,7 @@ const date = new Date();
                                 href="`mailto:${ social.email.url }`"
                                 target="_blank"
                             >
+                                <span class="sr-only">Email Me</span>
                                 <svg
                                     id="mail"
                                     class="custom-icon"

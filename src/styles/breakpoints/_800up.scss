@@ -27,10 +27,6 @@ HOMEPAGE STYLING
         float: none;
         margin: 0 auto var(--space-m);
     }
-
-    .pageTitle {
-        margin: var(--space-l) auto var(--space-xl);
-    }
 }
 
 /***************
@@ -90,10 +86,6 @@ POST STYLING
     h6,
     .h6 {
         margin: var(--space-s) auto;
-    }
-
-    .pageTitle {
-        margin: 2rem auto var(--space-s);
     }
 
     .featuredImage {

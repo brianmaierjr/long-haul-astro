@@ -21,7 +21,20 @@ const menuitems = [
 
 <header class="header">
     <div class="container">
-        <h1 class="logo"><a href="/">{title ?? settings.title}</a></h1>
+        {
+            Astro.url.pathname == "/" && (
+                <h1 class="header__title">
+                    <a href="/">{title ?? settings.title}</a>
+                </h1>
+            )
+        }
+        {
+            Astro.url.pathname != "/" && (
+                <p class="header__title">
+                    <a href="/">{title ?? settings.title}</a>
+                </p>
+            )
+        }
         <nav class="nav-collapse">
             <ul class="noList">
                 {
@@ -60,7 +73,7 @@ const menuitems = [
             max-width: 100%;
         }
 
-        h1 {
+        &__title {
             margin: 0;
             float: left;
             font-size: var(--step-0);
@@ -73,6 +86,11 @@ const menuitems = [
             a {
                 color: white;
                 text-decoration: none;
+
+                &:hover,
+                &:focus {
+                    color: white;
+                }
             }
         }
     }
@@ -98,11 +116,12 @@ const menuitems = [
                 overflow: hidden;
             }
 
-            h1 {
+            &__title {
                 font-size: var(--step-5);
                 line-height: 1;
                 letter-spacing: -1.5px;
                 padding-left: 0;
+                margin: 0;
             }
 
             nav {

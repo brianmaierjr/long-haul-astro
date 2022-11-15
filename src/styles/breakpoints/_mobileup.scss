@@ -26,6 +26,19 @@ body {
     }
 }
 
+// Screen Reader Text
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 // Text Selection Styling
 ::-moz-selection {
     background: $primary-color;
@@ -176,7 +189,7 @@ PAGE STYLES
 ***************/
 
 .pageTitle {
-    margin: var(--space-l) auto var(--space-s);
+    margin: var(--space-l) auto var(--space-xl);
     text-align: center;
 }
 
@@ -189,10 +202,14 @@ POST STYLING
 ***************/
 
 .post {
+    header {
+        margin-bottom: var(--space-xl);
+    }
+
     .postTitle {
         text-align: center;
         margin-top: var(--space-l);
-        margin-bottom: var(--space-s);
+        margin-bottom: var(--space-x);
     }
 
     blockquote {
