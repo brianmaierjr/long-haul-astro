@@ -12,7 +12,7 @@ const title = Astro.props.title || settings.title;
 const description = Astro.props.description || settings.description;
 const canonicalURL =
     Astro.props.canonicalURL || new URL(Astro.url.pathname, Astro.site);
-const image = new URL(Astro.props.image || "images/touring.jpg", Astro.site);
+const image = new URL(Astro.props.image || "images/touring.webp", Astro.site);
 ---
 
 <meta charset="utf-8" />
