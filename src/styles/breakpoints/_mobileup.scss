@@ -3,51 +3,52 @@ GLOBAL STYLES
 ***************/
 
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-    font-family: $serif;
-    line-height: 1.75;
-    font-size: var(--step-0);
-    color: $black;
-    overflow-x: hidden;
-    margin: 0;
+  font-family: $serif;
+  line-height: 1.75;
+  font-size: var(--step-0);
+  color: var(--text-color);
+  overflow-x: hidden;
+  margin: 0;
+  background-color: var(--surface1);
 
-    p,
-    ul {
-        margin: 0 0 var(--space-l);
-    }
+  p,
+  ul {
+    margin: 0 0 var(--space-l);
+  }
 }
 
 // Screen Reader Text
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 // Text Selection Styling
 ::-moz-selection {
-    background: $primary-color;
-    color: white;
+  background: $primary-color;
+  color: white;
 }
 
 ::selection {
-    background: $primary-color;
-    color: white;
+  background: $primary-color;
+  color: white;
 }
 
 // Media Styling
@@ -56,15 +57,15 @@ video,
 audio,
 iframe,
 object {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 // Layout
 .container {
-    max-width: 610px;
-    padding: 0 var(--space-s);
-    margin-left: auto;
-    margin-right: auto;
+  max-width: 610px;
+  padding: 0 var(--space-s);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /***************
@@ -72,11 +73,11 @@ LINK STYLING
 ***************/
 
 a {
-    color: $link-color;
+  color: $link-color;
 
-    &:hover {
-        color: darken($link-color, 15%);
-    }
+  &:hover {
+    color: darken($link-color, 15%);
+  }
 }
 
 /***************
@@ -84,70 +85,70 @@ MENU STYLING
 ***************/
 
 .nav-collapse {
-    z-index: 1;
+  z-index: 1;
 
-    ul {
-        margin: 0;
-        padding: 0;
-        width: 100%;
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    list-style: none;
+
+    li {
+      width: 100%;
+      display: block;
+      background: $background-color;
+      border-bottom: 2px solid lighten($background-color, 5%);
+
+      a {
+        color: white;
+        text-decoration: none;
         display: block;
-        list-style: none;
-
-        li {
-            width: 100%;
-            display: block;
-            background: $background-color;
-            border-bottom: 2px solid lighten($background-color, 5%);
-
-            a {
-                color: white;
-                text-decoration: none;
-                display: block;
-                padding: 5px var(--space-l);
-            }
-        }
+        padding: 5px var(--space-l);
+      }
     }
+  }
 }
 
 .js .nav-collapse {
-    clip: rect(0 0 0 0);
-    max-height: 0;
-    position: absolute;
-    display: block;
-    overflow: hidden;
-    zoom: 1;
-    clear: both;
-    width: 100%;
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+  clear: both;
+  width: 100%;
 }
 
 .nav-collapse.opened {
-    max-height: 9999px;
+  max-height: 9999px;
 }
 
 .nav-toggle {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    float: right;
-    line-height: var(--space-l);
-    margin-top: var(--space-2xs);
-    background-color: $background-color;
-    border-radius: 4px;
-    padding: 0 var(--space-2xs);
-    color: white;
-    text-decoration: none;
-    position: relative;
-    right: 2rem;
-    transition: all 0.2s ease-in-out;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  float: right;
+  line-height: var(--space-l);
+  margin-top: var(--space-2xs);
+  background-color: $background-color;
+  border-radius: 4px;
+  padding: 0 var(--space-2xs);
+  color: white;
+  text-decoration: none;
+  position: relative;
+  right: 2rem;
+  transition: all 0.2s ease-in-out;
 
-    &:hover {
-        color: white;
-        background-color: darken($background-color, 10%);
-    }
+  &:hover {
+    color: white;
+    background-color: darken($background-color, 10%);
+  }
 }
 
 /***************
@@ -155,8 +156,8 @@ PRE STYLING
 ***************/
 
 pre {
-    padding: var(--space-l);
-    margin: 0 0 2rem 0;
+  padding: var(--space-l);
+  margin: 0 0 2rem 0;
 }
 
 /***************
@@ -164,24 +165,24 @@ LIST STYLING
 ***************/
 
 .noList {
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
 }
 
 dt {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 dd {
-    margin: 0 0 var(--space-m);
+  margin: 0 0 var(--space-m);
 }
 
 .post ul ul,
 .post ul ol,
 .post ol ul,
 .post ol ol {
-    margin: 0;
+  margin: 0;
 }
 
 /***************
@@ -189,12 +190,12 @@ PAGE STYLES
 ***************/
 
 .pageTitle {
-    margin: var(--space-l) auto var(--space-xl);
-    text-align: center;
+  margin: var(--space-l) auto var(--space-xl);
+  text-align: center;
 }
 
 .content {
-    padding-top: var(--space-s);
+  padding-top: var(--space-s);
 }
 
 /***************
@@ -202,96 +203,96 @@ POST STYLING
 ***************/
 
 .post {
-    header {
-        margin-bottom: var(--space-xl);
+  header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .postTitle {
+    text-align: center;
+    margin-top: var(--space-l);
+    margin-bottom: var(--space-xs);
+  }
+
+  blockquote {
+    clear: both;
+    margin: var(--space-l) 0;
+    padding: 0;
+    line-height: 1.8;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: calc(var(--space-s) * -1);
+      background: $background-color;
+      display: block;
+      height: 2px;
+      width: 150px;
+      left: calc(50% - 75px);
     }
 
-    .postTitle {
-        text-align: center;
-        margin-top: var(--space-l);
-        margin-bottom: var(--space-x);
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: calc(var(--space-s) * -1);
+      background: $background-color;
+      display: block;
+      height: 2px;
+      width: 150px;
+      left: calc(50% - 75px);
     }
+  }
 
-    blockquote {
-        clear: both;
-        margin: var(--space-l) 0;
-        padding: 0;
-        line-height: 1.8;
-        position: relative;
+  .meta {
+    text-align: center;
+    color: lighten(black, 50%);
+    font-family: $sans-serif;
+    font-weight: 300;
+  }
 
-        &:before {
-            content: "";
-            position: absolute;
-            top: calc(var(--space-s) * -1);
-            background: $background-color;
-            display: block;
-            height: 2px;
-            width: 150px;
-            left: calc(50% - 75px);
-        }
+  figure {
+    margin: var(--space-xl) 0;
 
-        &:after {
-            content: "";
-            position: absolute;
-            bottom: calc(var(--space-s) * -1);
-            background: $background-color;
-            display: block;
-            height: 2px;
-            width: 150px;
-            left: calc(50% - 75px);
-        }
-    }
-
-    .meta {
-        text-align: center;
-        color: lighten(black, 50%);
-        font-family: $sans-serif;
-        font-weight: 300;
-    }
-
-    figure {
-        margin: var(--space-xl) 0;
-
-        figcaption {
-            text-align: center;
-            font-size: var(--step--1);
-            font-style: italic;
-            color: lighten($black, 30%);
-        }
-
-        img {
-            margin: 0 auto;
-            display: block;
-        }
+    figcaption {
+      text-align: center;
+      font-size: var(--step--1);
+      font-style: italic;
+      color: lighten($black, 30%);
     }
 
     img {
-        margin-bottom: var(--space-l);
+      margin: 0 auto;
+      display: block;
     }
+  }
 
-    .highlight {
-        clear: both;
-        margin-bottom: var(--step)-l;
+  img {
+    margin-bottom: var(--space-l);
+  }
+
+  .highlight {
+    clear: both;
+    margin-bottom: var(--step)-l;
+  }
+
+  .dropcap {
+    color: $primary-color;
+    margin-right: var(--space-2xs);
+    float: left;
+    font-size: 5em;
+    margin: 0 var(--space-xs) 0 0;
+    line-height: 0.85;
+  }
+
+  .featuredImage {
+    position: relative;
+    margin-top: var(--space-2xs);
+    clip-path: polygon(0 var(--space-s), 100% 0, 100% 100%, 0 100%);
+
+    img {
+      margin-bottom: 0;
     }
-
-    .dropcap {
-        color: $primary-color;
-        margin-right: var(--space-2xs);
-        float: left;
-        font-size: 5em;
-        margin: 0 var(--space-xs) 0 0;
-        line-height: 0.85;
-    }
-
-    .featuredImage {
-        position: relative;
-        margin-top: var(--space-2xs);
-        clip-path: polygon(0 var(--space-s), 100% 0, 100% 100%, 0 100%);
-
-        img {
-            margin-bottom: 0;
-        }
-    }
+  }
 }
 
 /***************
@@ -299,72 +300,72 @@ POST NAV STYLING
 ***************/
 
 .postNav {
-    border-top: 1px solid darken(white, 10%);
-    border-bottom: 1px solid darken(white, 10%);
+  border-top: 1px solid darken(white, 10%);
+  border-bottom: 1px solid darken(white, 10%);
+  overflow: hidden;
+
+  .prev,
+  .next {
+    display: block;
+    width: 100%;
+    height: 5rem;
     overflow: hidden;
+    position: relative;
+    font-family: $sans-serif;
+    font-weight: 800;
+    font-size: var(--step--1);
+    text-transform: uppercase;
+    text-align: center;
 
-    .prev,
-    .next {
-        display: block;
-        width: 100%;
-        height: 5rem;
-        overflow: hidden;
-        position: relative;
-        font-family: $sans-serif;
-        font-weight: 800;
-        font-size: var(--step--1);
-        text-transform: uppercase;
-        text-align: center;
-
-        img {
-            z-index: 1;
-            display: block;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 0;
-            width: 100%;
-            height: auto;
-        }
-
-        span {
-            z-index: 10;
-            position: relative;
-            padding: 0.5rem;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            line-height: 1.4;
-        }
-
-        &.image {
-            text-decoration: none;
-            color: white;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-            padding: 0 0.5rem;
-            position: relative;
-            transition: all 0.2s ease-in-out;
-        }
-
-        &:hover {
-            &.image {
-                opacity: 0.8;
-            }
-        }
+    img {
+      z-index: 1;
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 100%;
+      height: auto;
     }
 
-    .prev {
-        span {
-            left: 0;
-        }
+    span {
+      z-index: 10;
+      position: relative;
+      padding: 0.5rem;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      line-height: 1.4;
     }
 
-    .next {
-        span {
-            right: 0;
-        }
+    &.image {
+      text-decoration: none;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+      padding: 0 0.5rem;
+      position: relative;
+      transition: all 0.2s ease-in-out;
     }
+
+    &:hover {
+      &.image {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .prev {
+    span {
+      left: 0;
+    }
+  }
+
+  .next {
+    span {
+      right: 0;
+    }
+  }
 }
 
 /***************
@@ -372,13 +373,13 @@ PAGINATION STYLING
 ***************/
 
 .pagination {
-    .next {
-        float: left;
-    }
+  .next {
+    float: left;
+  }
 
-    .previous {
-        float: right;
-    }
+  .previous {
+    float: right;
+  }
 }
 
 /***************
@@ -386,61 +387,61 @@ POST LIST STYLING
 ***************/
 
 .posts {
-    article {
-        margin-bottom: 4rem;
-        position: relative;
+  article {
+    margin-bottom: 4rem;
+    position: relative;
 
-        &:before {
-            content: "";
-            position: absolute;
-            bottom: -2rem;
-            left: 0;
-            background: darken(white, 10%);
-            height: 2px;
-            width: 60px;
-        }
-
-        a {
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-
-        .date {
-            color: lighten(black, 50%);
-            font-family: $sans-serif;
-            font-weight: 300;
-            font-size: var(--step--1);
-        }
-
-        h3 {
-            margin: 0 0 var(--space-2xs);
-        }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -2rem;
+      left: 0;
+      background: var(--text-accent-color);
+      height: 2px;
+      width: 60px;
     }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .date {
+      color: var(--text-accent-color);
+      font-family: $sans-serif;
+      font-weight: 300;
+      font-size: var(--step--1);
+    }
+
+    h3 {
+      margin: 0 0 var(--space-2xs);
+    }
+  }
 }
 
 /***************
 DARK THEME STYLING
 ***************/
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: black;
-        color: white;
-    }
+// @media (prefers-color-scheme: dark) {
+//     body {
+//         background-color: black;
+//         color: white;
+//     }
 
-    .posts article .date {
-        color: white;
-    }
+//     .posts article .date {
+//         color: white;
+//     }
 
-    .postNav {
-        border-top: 1px solid lighten(black, 10%);
-        border-bottom: 1px solid lighten(black, 10%);
-    }
+//     .postNav {
+//         border-top: 1px solid lighten(black, 10%);
+//         border-bottom: 1px solid lighten(black, 10%);
+//     }
 
-    .footer .container {
-        border-top-color: lighten(black, 10%);
-    }
-}
+//     .footer .container {
+//         border-top-color: lighten(black, 10%);
+//     }
+// }

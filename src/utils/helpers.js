@@ -19,13 +19,3 @@ export function slugify(string) {
         .replace(/-+$/, "");
 }
 
-export function generateCategoryData(categories) {
-    let categoryData = [];
-    categories.forEach((category) => {
-        categoryData.push({
-            name: category,
-            slug: `${slugify(category)}`,
-        });
-    });
-    return categoryData;
-}

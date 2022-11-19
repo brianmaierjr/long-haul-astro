@@ -1,6 +1,6 @@
 ---
 export interface Props {
-    title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -12,15 +12,15 @@ import "../styles/style.scss";
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="js">
-    <BaseHead />
-    <body>
-        <SiteHeader />
-        <main class="content">
-            <div class="container">
-                <slot />
-            </div>
-        </main><!-- end .content -->
-        <SiteFooter />
-    </body>
+<html lang="en" class="js" color-mode="light">
+  <BaseHead />
+  <body>
+    <SiteHeader />
+    <main class="content">
+      <div class="container">
+        <slot />
+      </div>
+    </main><!-- end .content -->
+    <SiteFooter />
+  </body>
 </html>

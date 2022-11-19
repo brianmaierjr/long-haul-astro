@@ -3,40 +3,40 @@ TABLE STYLES
 ***************/
 
 table {
-    width: 100%;
-    margin-bottom: var(--space-m);
-    border-collapse: collapse;
+  width: 100%;
+  margin-bottom: var(--space-m);
+  border-collapse: collapse;
 
-    caption {
-        margin: 0 0 7px;
-        font-size: var(--step--2);
-        color: $grey;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+  caption {
+    margin: 0 0 7px;
+    font-size: var(--step--2);
+    color: $grey;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 }
 
 tr {
-    &:nth-child(even) {
-        background-color: lighten($grey, 30%);
+  &:nth-child(even) {
+    background-color: lighten($grey, 30%);
 
-        @media (prefers-color-scheme: dark) {
-            background-color: lighten(black, 10%);
-        }
-    }
+    // @media (prefers-color-scheme: dark) {
+    //     background-color: lighten(black, 10%);
+    // }
+  }
 }
 
 td,
 th {
-    text-align: left;
-    padding: var(--space-2xs);
+  text-align: left;
+  padding: var(--space-2xs);
 }
 
 th {
-    background-color: $primary-color;
-    color: white;
+  background-color: $primary-color;
+  color: white;
 
-    &:last-child {
-        border-right: 0;
-    }
+  &:last-child {
+    border-right: 0;
+  }
 }
