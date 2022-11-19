@@ -1,17 +1,27 @@
-export const social = {
-    facebook: {
-        url: "https://www.facebook.com/yourname",
+export const social = [
+    {
+        name: "facebook",
+        icon: "ri:facebook-fill",
+        url: "https://www.facebook.com/brianmaierjr",
     },
-    twitter: {
-        url: "https://twitter.com/yourname",
+    {
+        name: "twitter",
+        icon: "ri:twitter-fill",
+        url: "https://twitter.com/brianmaierjr",
     },
-    linkedin: {
-        url: "https://www.linkedin.com/in/yourname",
+    {
+        name: "linkedin",
+        icon: "ri:linkedin-fill",
+        url: "https://www.linkedin.com/in/brianmaierjr",
     },
-    github: {
+    {
+        name: "github",
+        icon: "ri:github-fill",
         url: "https://github.com/brianmaierjr",
     },
-    email: {
+    {
+        name: "email",
+        icon: "mdi:envelope",
         url: "brimaidesigns@gmail.com",
     },
-};
+];
