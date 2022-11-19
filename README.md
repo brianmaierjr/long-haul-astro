@@ -12,3 +12,9 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying       |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
 | `npm run astro --help` | Get help using the Astro CLI                       |
+
+## TO DO
+
+-   Figure out title/description page meta
+-   Finish Post Navigation
+-   Add Pagination to Home Page

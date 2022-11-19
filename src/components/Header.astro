@@ -1,164 +1,159 @@
 ---
 import { settings } from "../data/settings";
+import { menu } from "../data/menu";
 import ColorModeToggle from "./ColorModeToggle.astro";
 const title = "Long Haul Astro";
-
-const menuitems = [
-  { name: "Home", link: "/" },
-  { name: "About", link: "/about" },
-  { name: "Contact", link: "/contact" },
-  {
-    name: "GitHub",
-    link: "https://github.com/brianmaierjr/long-haul",
-    external: true,
-  },
-  {
-    name: "Download Theme",
-    link: "https://github.com/brianmaierjr/long-haul/archive/master.zip",
-    external: true,
-  },
-];
 ---
 
 <header class="header">
-  <ColorModeToggle />
-  <div class="container">
-    {
-      Astro.url.pathname == "/" && (
-        <h1 class="header__title">
-          <a href="/">{title ?? settings.title}</a>
-        </h1>
-      )
-    }
-    {
-      Astro.url.pathname != "/" && (
-        <p class="header__title">
-          <a href="/">{title ?? settings.title}</a>
-        </p>
-      )
-    }
-    <nav class="nav-collapse">
-      <ul class="noList">
+    <ColorModeToggle />
+    <div class="container">
         {
-          menuitems.map((item, index) => (
-            <>
-              <li class="element" key={index}>
-                <a href={item.link}>{item.name}</a>
-              </li>
-            </>
-          ))
+            Astro.url.pathname == "/" && (
+                <h1 class="header__title">
+                    <a href="/">{title ?? settings.title}</a>
+                </h1>
+            )
         }
-      </ul>
-    </nav>
-  </div>
+        {
+            Astro.url.pathname != "/" && (
+                <p class="header__title">
+                    <a href="/">{title ?? settings.title}</a>
+                </p>
+            )
+        }
+        <nav class="nav-collapse">
+            <ul class="noList">
+                {
+                    menu.map((item, index) => (
+                        <>
+                            <li class="element" key={item.index}>
+                                <a href={item.link}>{item.name}</a>
+                            </li>
+                        </>
+                    ))
+                }
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <style lang="scss">
-  @use "../styles/_config.scss" as *;
-  .header {
-    background-color: $background-color;
-    background-image: url("../images/touring.webp");
-    background-size: cover;
-    background-position: center center;
-    color: white;
-    padding: 0;
-    height: var(--space-2xl);
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--space-s)), 0 100%);
-
-    .container {
-      padding: 0;
-      max-width: 100%;
-    }
-
-    &__title {
-      margin: 0;
-      float: left;
-      font-size: var(--step-0);
-      padding-left: 2rem;
-      line-height: var(--space-xl);
-      font-family: $sans-serif;
-      font-weight: 800;
-      text-transform: uppercase;
-
-      a {
-        color: white;
-        text-decoration: none;
-
-        &:hover,
-        &:focus {
-          color: white;
-        }
-      }
-    }
-  }
-
-  @media (min-width: 800px) {
+    @use "../styles/_config.scss" as *;
     .header {
-      height: 15em;
-      position: relative;
-      padding-bottom: var(--space-l);
-      margin-bottom: var(--space-l);
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--space-l)), 0 100%);
+        background-color: $background-color;
+        background-image: url("../images/touring.webp");
+        background-size: cover;
+        background-position: center center;
+        color: white;
+        padding: 0;
+        height: var(--space-2xl);
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - var(--space-s)),
+            0 100%
+        );
 
-      .container {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        max-width: 800px;
-        overflow: hidden;
-      }
+        .container {
+            padding: 0;
+            max-width: 100%;
+        }
 
-      &__title {
-        font-size: var(--step-5);
-        line-height: 1;
-        letter-spacing: -1.5px;
-        padding-left: 0;
-        margin: 0;
-      }
-
-      nav {
-        float: left;
-        clear: left;
-
-        ul {
-          margin: 0;
-
-          li {
-            display: inline;
+        &__title {
+            margin: 0;
+            float: left;
+            font-size: var(--step-0);
+            padding-left: 2rem;
             line-height: var(--space-xl);
-            background: none;
-            padding: 0 5px;
-            border: none;
+            font-family: $sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
 
             a {
-              color: white;
-              font-size: 0.9em;
-              text-decoration: none;
-              padding: 0 0 var(--space-3xs);
+                color: white;
+                text-decoration: none;
 
-              &:hover {
-                color: darken(white, 20%);
-              }
+                &:hover,
+                &:focus {
+                    color: white;
+                }
             }
-
-            &.current {
-              padding-bottom: 0 var(--space-3xs);
-              border-bottom: 4px solid rgba(255, 255, 255, 0.4);
-            }
-          }
         }
-      }
     }
 
-    // Large Header Size
+    @media (min-width: 800px) {
+        .header {
+            height: 15em;
+            position: relative;
+            padding-bottom: var(--space-l);
+            margin-bottom: var(--space-l);
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% calc(100% - var(--space-l)),
+                0 100%
+            );
 
-    .header--large {
-      height: 50vh;
+            .container {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                max-width: 800px;
+                overflow: hidden;
+            }
 
-      .container {
-        top: 90%;
-        transform: translateY(-100%);
-      }
+            &__title {
+                font-size: var(--step-5);
+                line-height: 1;
+                letter-spacing: -1.5px;
+                padding-left: 0;
+                margin: 0;
+            }
+
+            nav {
+                float: left;
+                clear: left;
+
+                ul {
+                    margin: 0;
+
+                    li {
+                        display: inline;
+                        line-height: var(--space-xl);
+                        background: none;
+                        padding: 0 5px;
+                        border: none;
+
+                        a {
+                            color: white;
+                            font-size: 0.9em;
+                            text-decoration: none;
+                            padding: 0 0 var(--space-3xs);
+
+                            &:hover {
+                                color: darken(white, 20%);
+                            }
+                        }
+
+                        &.current {
+                            padding-bottom: 0 var(--space-3xs);
+                            border-bottom: 4px solid rgba(255, 255, 255, 0.4);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Large Header Size
+
+        .header--large {
+            height: 50vh;
+
+            .container {
+                top: 90%;
+                transform: translateY(-100%);
+            }
+        }
     }
-  }
 </style>
