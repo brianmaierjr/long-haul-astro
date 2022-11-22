@@ -1,15 +1,15 @@
 ---
-import Icon from "heroicons-astro/Heroicon.astro";
+import { Icon } from "astro-icon";
 ---
 
 <!--- Light mode button --->
 <button class="color-mode__btn light--hidden" aria-label="Toggle light mode">
-    <Icon iconCode="sun" iconStyle="outline" customClasses="stroke-white" />
+    <Icon name="ph:sun" class="color-white" />
 </button>
 
 <!--- Dark mode button --->
 <button class="color-mode__btn dark--hidden" aria-label="Toggle dark mode">
-    <Icon iconCode="moon" iconStyle="outline" customClasses="stroke-white" />
+    <Icon name="ph:moon" class="color-white" />
 </button>
 
 <style lang="scss">

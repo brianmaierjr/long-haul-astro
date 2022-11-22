@@ -44,7 +44,7 @@ form {
     // Notes go under the input fields
     .note {
         margin-top: 5px;
-        color: $subtle-color;
+        color: var(--subtle-color);
     }
 
     // Required label

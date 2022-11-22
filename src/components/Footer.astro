@@ -1,6 +1,5 @@
 ---
-import { settings } from "../data/settings";
-import { social } from "../data/social";
+import { settings, social } from "../data/settings";
 import { Icon } from "astro-icon";
 const date = new Date();
 ---
@@ -19,7 +18,11 @@ const date = new Date();
                     social.map((item, index) => (
                         <>
                             <li>
-                                <a class="social__link" href={item.url}>
+                                <a
+                                    class="social__link"
+                                    href={item.url}
+                                    target="_blank"
+                                >
                                     <span class="sr-only">
                                         {settings.title} on {item.name}
                                     </span>
@@ -45,7 +48,7 @@ const date = new Date();
         clear: both;
 
         .container {
-            border-top: 4px solid darken(white, 15%);
+            border-top: 4px solid var(--subtle-color);
             padding-top: var(--space-2xs);
             max-width: 90%;
         }
@@ -109,17 +112,25 @@ const date = new Date();
 
     @media (min-width: 800px) {
         .footer {
-            &-links {
-                float: right;
-            }
-
-            .copy {
-                float: left;
-            }
-
             .container {
-                padding: var(--space-s) 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                // padding: 0;
                 max-width: 800px;
+            }
+            .copy {
+                margin: 0;
+            }
+
+            &-links {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+
+            .social {
+                margin-bottom: 0;
             }
         }
     }

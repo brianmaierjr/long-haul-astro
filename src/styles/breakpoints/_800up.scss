@@ -3,16 +3,16 @@ GLOBAL STYLES
 ***************/
 
 .content {
-  padding-top: 0;
-  position: relative;
-  z-index: 1;
+    padding-top: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .container {
-  max-width: 880px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
 }
 
 /***************
@@ -20,13 +20,12 @@ HOMEPAGE STYLING
 ***************/
 
 #home {
-  .posts,
-  .pageTitle,
-  .pagination {
-    width: 75%;
-    float: none;
-    margin: 0 auto var(--space-m);
-  }
+    .posts,
+    .pageTitle,
+    .pagination {
+        max-width: 65ch;
+        margin: 0 auto var(--space-m);
+    }
 }
 
 /***************
@@ -34,22 +33,22 @@ MENU STYLING
 ***************/
 
 .js {
-  .nav-collapse {
-    position: relative;
-    max-height: none;
+    .nav-collapse {
+        position: relative;
+        max-height: none;
 
-    &.closed {
-      max-height: none;
-    }
+        &.closed {
+            max-height: none;
+        }
 
-    ul li a {
-      display: inline-block;
+        ul li a {
+            display: inline-block;
+        }
     }
-  }
 }
 
 .nav-toggle {
-  display: none;
+    display: none;
 }
 
 /***************
@@ -57,41 +56,40 @@ POST STYLING
 ***************/
 
 .post {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ul,
-  ol,
-  dl,
-  .pageTitle {
-    width: 75%;
-    float: none;
-    margin: 0 auto 2rem;
-  }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol,
+    dl,
+    .pageTitle {
+        max-width: 50rem;
+        margin: 0 auto 2rem;
+    }
 
-  h1,
-  .h1,
-  h2,
-  .h2,
-  h3,
-  .h3,
-  h4,
-  .h4,
-  h5,
-  .h5,
-  h6,
-  .h6 {
-    margin: var(--space-s) auto;
-  }
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        margin: var(--space-s) auto;
+    }
 
-  .featuredImage {
-    position: relative;
-    margin-top: 2rem;
-  }
+    .featuredImage {
+        position: relative;
+        margin-top: 2rem;
+    }
 }
 
 /***************
@@ -99,20 +97,20 @@ POST NAV STYLING
 ***************/
 
 .postNav {
-  .prev,
-  .next {
-    width: 50%;
-  }
+    display: flex;
 
-  .prev {
-    float: left;
-    text-align: left;
-  }
+    .prev,
+    .next {
+        flex: 1;
+    }
 
-  .next {
-    text-align: right;
-    float: right;
-  }
+    .prev {
+        text-align: left;
+    }
+
+    .next {
+        text-align: right;
+    }
 }
 
 /***************
@@ -120,26 +118,10 @@ CONTACT PAGE STYLING
 ***************/
 
 .contactContainer {
-  display: flex;
-  gap: var(--space-l);
+    display: flex;
+    gap: var(--space-l);
 
-  > * {
-    flex: 1;
-  }
+    > * {
+        flex: 1;
+    }
 }
-
-/***************
-DARK THEME STYLING
-***************/
-
-// @media (prefers-color-scheme: dark) {
-//     body {
-//         background-color: black;
-//         color: white;
-//     }
-
-//     .content:after,
-//     .post .featuredImage:before {
-//         background: black;
-//     }
-// }

@@ -18,3 +18,4 @@ All commands are run from the root of the project, from a terminal:
 -   Figure out title/description page meta
 -   Finish Post Navigation
 -   Add Pagination to Home Page
+-   Hamburger Menu

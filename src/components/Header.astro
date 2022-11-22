@@ -1,6 +1,5 @@
 ---
-import { settings } from "../data/settings";
-import { menu } from "../data/menu";
+import { settings, menu } from "../data/settings";
 import ColorModeToggle from "./ColorModeToggle.astro";
 const title = "Long Haul Astro";
 ---
@@ -62,7 +61,6 @@ const title = "Long Haul Astro";
 
         &__title {
             margin: 0;
-            float: left;
             font-size: var(--step-0);
             padding-left: 2rem;
             line-height: var(--space-xl);
@@ -112,9 +110,6 @@ const title = "Long Haul Astro";
             }
 
             nav {
-                float: left;
-                clear: left;
-
                 ul {
                     margin: 0;
 
