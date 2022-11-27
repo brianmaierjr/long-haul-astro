@@ -41,7 +41,7 @@ const date = new Date();
 </footer>
 
 <style lang="scss">
-    @use "../styles/_config.scss" as *;
+    @use "../styles/base/_config.scss" as *;
     .footer {
         text-align: center;
         padding: 2rem 0;
@@ -90,7 +90,7 @@ const date = new Date();
                             color: var(--white);
 
                             .outer-shape {
-                                fill: $primary-color;
+                                fill: var(--primary-color);
                             }
 
                             .inner-shape {
@@ -102,7 +102,7 @@ const date = new Date();
                     &:hover,
                     &:focus {
                         a {
-                            background-color: darken($primary-color, 10%);
+                            text-decoration: underline;
                         }
                     }
                 }

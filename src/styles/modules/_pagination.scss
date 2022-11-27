@@ -1,0 +1,12 @@
+/***************
+PAGINATION STYLING
+***************/
+
+.pagination {
+    display: flex;
+
+    .next,
+    .previous {
+        flex: 1;
+    }
+}

@@ -7,24 +7,20 @@ $silver: #ddd;
 $grey: #aaa;
 $black: #111;
 
-// Color variables
-$primary-color: seagreen;
-$secondary-color: #233e5b;
-$link-color: $primary-color;
-$background-color: $primary-color;
-$bad-color: #ff4136; // Bad color for errors, validation etc.
-
 :root {
     --white: #fff;
     --silver: #ddd;
     --grey: rgb(228, 228, 228);
     --black: #111;
+    --bad-color: #ff4136;
+    --primary-color: #2a7e4f;
+    --link-color: var(--primary-color);
+    --link-hover: #246b43;
 
     &[color-mode="light"] {
         --surface1: var(--white);
         --text-color: var(--black);
         --text-accent-color: #393939;
-        --primary-color: seagreen;
         --bad-color: #ff4136;
         --subtle-color: rgb(228, 228, 228);
     }
@@ -50,10 +46,14 @@ $line-height: 44px; // Consistent height for buttons, inputs etc.
 TYPE SETTINGS
 ***************/
 
-$sans-serif: "Poppins", Helvetica, Arial, sans-serif;
-$serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
-    Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
-    Segoe UI Emoji, Segoe UI Symbol;
+:root {
+    --sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+        segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto,
+        arial, sans-serif;
+    --serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
+        Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
+        Segoe UI Emoji, Segoe UI Symbol;
+}
 
 // Fluid Type
 /* @link https://utopia.fyi/type/calculator?c=320,18,1.125,1200,22,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */

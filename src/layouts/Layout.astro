@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
@@ -9,18 +9,31 @@ import BaseHead from "../components/BaseHead.astro";
 import SiteHeader from "../components/Header.astro";
 import SiteFooter from "../components/Footer.astro";
 import "../styles/style.scss";
+import SkipToLink from "../components/SkipToLink.astro";
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="js" color-mode="light">
-  <BaseHead />
-  <body>
-    <SiteHeader />
-    <main class="content">
-      <div class="container">
-        <slot />
-      </div>
-    </main><!-- end .content -->
-    <SiteFooter />
-  </body>
+    <BaseHead />
+    <body>
+        <SkipToLink />
+        <SiteHeader />
+        <main class="content" id="main">
+            {
+                Astro.url.pathname == "/contact" && (
+                    <div class="container container--lg">
+                        <slot />
+                    </div>
+                )
+            }
+            {
+                Astro.url.pathname != "/contact" && (
+                    <div class="container">
+                        <slot />
+                    </div>
+                )
+            }
+        </main><!-- end .content -->
+        <SiteFooter />
+    </body>
 </html>

@@ -3,32 +3,31 @@ BUTTON DEFAULTS
 ***************/
 
 .button {
-  background-color: $primary-color;
-  display: inline-block;
-  position: relative;
-  font-family: $sans-serif;
-  text-decorddation: none;
-  color: $white;
-  font-size: var(--step-0);
-  line-height: var(--space-s);
-  font-weight: normal;
-  padding: var(--space-2xs) var(--space-m);
-  border: 0;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-bottom: var(--space-2xs);
-  transition: background-color 0.14s ease-in-out;
-
-  // hovering on the btn
-  &:hover,
-  &:focus {
-    color: $white;
+    background-color: var(--primary-color);
+    display: inline-block;
+    position: relative;
+    font-family: var(--sans-serif);
     text-decoration: none;
-    background-color: darken($primary-color, 10%);
-  } // end hover
+    color: var(--white);
+    font-size: var(--step-0);
+    line-height: var(--space-s);
+    font-weight: normal;
+    padding: var(--space-2xs) var(--space-m);
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: var(--space-2xs);
+    transition: background-color 0.14s ease-in-out;
 
-  // clicking on the button
-  &:active {
-    top: 1px; // adds a tiny hop to the click
-  } // end active
-} // end .button
+    // hovering on the btn
+    &:hover,
+    &:focus {
+        color: var(--white);
+        text-decoration: underline;
+    }
+
+    // clicking on the button
+    &:active {
+        top: 1px; // adds a tiny hop to the click
+    }
+}

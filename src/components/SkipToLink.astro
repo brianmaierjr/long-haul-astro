@@ -1,0 +1,20 @@
+<a class="skip-to-content-link" href="#main"> Skip to content</a>
+
+<style lang="scss">
+    @use "../styles/base/_config.scss" as *;
+    @use "../styles/modules/buttons.scss" as *;
+
+    .skip-to-content-link {
+        left: 1em;
+        top: 0.5em;
+        position: absolute;
+        z-index: 5;
+        @extend .button;
+        transition: transform 0.3s;
+        transform: translateY(-150%);
+    }
+
+    .skip-to-content-link:focus {
+        transform: translateY(0%);
+    }
+</style>

@@ -13,7 +13,8 @@ input[type="password"],
 input[type="number"],
 input[type="search"],
 textarea {
-    background: darken(white, 10%);
+    background: var(--subtle-color);
+    color: currentColor;
     padding: 5px;
     outline: none;
     border: none;
@@ -22,7 +23,7 @@ textarea {
     margin-bottom: 0.5rem;
 
     &:focus {
-        border: 1px solid $primary-color;
+        border: 1px solid var(--primary-color);
     }
 
     &.full-width {
@@ -57,7 +58,7 @@ form {
         // Validation reason
         .reason {
             margin-top: 5px;
-            color: $bad-color;
+            color: var(--bad-color);
         }
 
         input[type="text"],
@@ -67,7 +68,7 @@ form {
         input[type="number"],
         input[type="search"],
         textarea {
-            border-color: $bad-color;
+            border-color: var(--bad-color);
         }
     }
 }

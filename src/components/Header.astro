@@ -26,7 +26,7 @@ const title = "Long Haul Astro";
                 {
                     menu.map((item, index) => (
                         <>
-                            <li class="element" key={item.index}>
+                            <li class="element">
                                 <a href={item.link}>{item.name}</a>
                             </li>
                         </>
@@ -38,15 +38,15 @@ const title = "Long Haul Astro";
 </header>
 
 <style lang="scss">
-    @use "../styles/_config.scss" as *;
+    @use "../styles/base/_config.scss" as *;
+
     .header {
-        background-color: $background-color;
+        background-color: var(--background-color);
         background-image: url("../images/touring.webp");
         background-size: cover;
         background-position: center center;
         color: white;
-        padding: 0;
-        height: var(--space-2xl);
+        padding-block: var(--space-m);
         clip-path: polygon(
             0 0,
             100% 0,
@@ -54,34 +54,7 @@ const title = "Long Haul Astro";
             0 100%
         );
 
-        .container {
-            padding: 0;
-            max-width: 100%;
-        }
-
-        &__title {
-            margin: 0;
-            font-size: var(--step-0);
-            padding-left: 2rem;
-            line-height: var(--space-xl);
-            font-family: $sans-serif;
-            font-weight: 800;
-            text-transform: uppercase;
-
-            a {
-                color: white;
-                text-decoration: none;
-
-                &:hover,
-                &:focus {
-                    color: white;
-                }
-            }
-        }
-    }
-
-    @media (min-width: 800px) {
-        .header {
+        @media (min-width: 800px) {
             height: 15em;
             position: relative;
             padding-bottom: var(--space-l);
@@ -89,65 +62,80 @@ const title = "Long Haul Astro";
             clip-path: polygon(
                 0 0,
                 100% 0,
-                100% calc(100% - var(--space-l)),
+                100% calc(100% - var(--space-2xl)),
                 0 100%
             );
+        }
 
-            .container {
+        .container {
+            @media (min-width: 800px) {
                 position: relative;
                 top: 50%;
                 transform: translateY(-50%);
                 max-width: 800px;
                 overflow: hidden;
             }
+        }
 
-            &__title {
+        &__title {
+            margin: 0;
+            font-size: var(--step-0);
+            padding-bottom: 0;
+            font-family: var(--sans-serif);
+            font-weight: 900;
+            text-transform: uppercase;
+
+            @media (min-width: 800px) {
                 font-size: var(--step-5);
+                padding-bottom: var(--space-xs);
                 line-height: 1;
                 letter-spacing: -1.5px;
                 padding-left: 0;
                 margin: 0;
             }
 
-            nav {
-                ul {
-                    margin: 0;
+            a {
+                color: white;
+                text-decoration: none;
 
-                    li {
-                        display: inline;
-                        line-height: var(--space-xl);
-                        background: none;
-                        padding: 0 5px;
-                        border: none;
-
-                        a {
-                            color: white;
-                            font-size: 0.9em;
-                            text-decoration: none;
-                            padding: 0 0 var(--space-3xs);
-
-                            &:hover {
-                                color: darken(white, 20%);
-                            }
-                        }
-
-                        &.current {
-                            padding-bottom: 0 var(--space-3xs);
-                            border-bottom: 4px solid rgba(255, 255, 255, 0.4);
-                        }
-                    }
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
                 }
             }
         }
 
-        // Large Header Size
+        nav {
+            ul {
+                margin: 0;
+                display: flex;
+                gap: var(--space-2xs);
 
-        .header--large {
-            height: 50vh;
+                @media (min-width: 800px) {
+                    gap: var(--space-xs);
+                }
 
-            .container {
-                top: 90%;
-                transform: translateY(-100%);
+                li {
+                    a {
+                        color: white;
+                        font-size: var(--step--2);
+                        text-decoration: none;
+
+                        @media (min-width: 800px) {
+                            font-size: var(--step--1);
+                        }
+
+                        &:hover,
+                        &:focus {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    &.current {
+                        padding-bottom: 0 var(--space-3xs);
+                        border-bottom: 4px solid rgba(255, 255, 255, 0.4);
+                    }
+                }
             }
         }
     }

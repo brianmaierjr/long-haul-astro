@@ -48,6 +48,6 @@ export const social = [
     {
         name: "email",
         icon: "mdi:envelope",
-        url: "brimaidesigns@gmail.com",
+        url: "mailto:brimaidesigns@gmail.com",
     },
 ];

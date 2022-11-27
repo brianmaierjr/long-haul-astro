@@ -1,0 +1,41 @@
+/***************
+POST LIST STYLING
+***************/
+
+.posts {
+    article {
+        margin-bottom: 4rem;
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: -2rem;
+            left: 0;
+            background: var(--text-accent-color);
+            height: 2px;
+            width: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: 800;
+
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+            }
+        }
+
+        .date {
+            color: var(--text-accent-color);
+            font-family: var(--sans-serif);
+            font-weight: 300;
+            font-size: var(--step--1);
+        }
+
+        h3 {
+            margin: 0 0 var(--space-2xs);
+        }
+    }
+}

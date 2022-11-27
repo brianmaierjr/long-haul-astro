@@ -15,7 +15,7 @@ const posts = await Astro.glob("./blog/*.md");
                         <span class="date">
                             {formatDate(post.frontmatter.date)}
                         </span>
-                        <h2 class="h4">
+                        <h2 class="h3">
                             <a class="post-link" href={post.url}>
                                 {post.frontmatter.title}
                             </a>

@@ -1,0 +1,135 @@
+/***************
+POST STYLING
+***************/
+
+.post {
+    header {
+        margin-bottom: var(--space-xl);
+    }
+
+    .postTitle {
+        text-align: center;
+        margin-top: var(--space-l);
+        margin-bottom: var(--space-xs);
+        font-weight: 900;
+    }
+
+    blockquote {
+        margin: var(--space-l) 0;
+        padding: 0;
+        line-height: 1.8;
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: calc(var(--space-s) * -1);
+            background: var(--background-color);
+            display: block;
+            height: 2px;
+            width: 150px;
+            left: calc(50% - 75px);
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: calc(var(--space-s) * -1);
+            background: var(--background-color);
+            display: block;
+            height: 2px;
+            width: 150px;
+            left: calc(50% - 75px);
+        }
+    }
+
+    figure {
+        margin: var(--space-xl) 0;
+
+        figcaption {
+            text-align: center;
+            font-size: var(--step--1);
+            font-style: italic;
+            color: lighten($black, 30%);
+        }
+
+        img {
+            margin: 0 auto;
+            display: block;
+        }
+    }
+
+    img {
+        margin-bottom: var(--space-l);
+    }
+
+    .highlight {
+        clear: both;
+        margin-bottom: var(--step)-l;
+    }
+
+    .dropcap {
+        color: var(--primary-color);
+        margin-right: var(--space-2xs);
+        float: left;
+        font-size: 5em;
+        margin: 0 var(--space-xs) 0 0;
+        line-height: 0.85;
+    }
+
+    .featuredImage {
+        position: relative;
+        margin-top: var(--space-2xs);
+        clip-path: polygon(0 var(--space-s), 100% 0, 100% 100%, 0 100%);
+
+        img {
+            margin-bottom: 0;
+        }
+    }
+
+    .meta {
+        text-align: center;
+        color: lighten(black, 50%);
+        font-family: var(--sans-serif);
+        font-weight: 300;
+    }
+}
+
+@media (min-width: 800px) {
+    .post {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        ul,
+        ol,
+        dl,
+        .pageTitle {
+            max-width: 50rem;
+            margin: 0 auto var(--space-xl);
+        }
+
+        h1,
+        .h1,
+        h2,
+        .h2,
+        h3,
+        .h3,
+        h4,
+        .h4,
+        h5,
+        .h5,
+        h6,
+        .h6 {
+            margin: var(--space-s) auto;
+        }
+
+        .featuredImage {
+            position: relative;
+            margin-top: 2rem;
+        }
+    }
+}
