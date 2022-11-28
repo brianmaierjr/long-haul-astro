@@ -4,6 +4,7 @@ GLOBAL STYLES
 
 html {
     box-sizing: border-box;
+    font-size: 100%;
 }
 
 *,
@@ -21,12 +22,12 @@ html {
 
 body {
     font-family: var(--serif);
-    line-height: 1.75;
-    font-size: var(--step-0);
+    line-height: 1.6;
     color: var(--text-color);
     overflow-x: hidden;
     margin: 0;
     background-color: var(--surface1);
+    font-size: var(--step-0);
 
     p,
     ul {
@@ -65,11 +66,12 @@ audio,
 iframe,
 object {
     max-width: 100%;
+    height: auto;
 }
 
 // Layout
 .container {
-    max-width: min(calc(100% - var(--space-l)), 50rem);
+    max-width: min(calc(100% - var(--space-l)), 45rem);
     margin-left: auto;
     margin-right: auto;
 
@@ -106,7 +108,7 @@ PAGE STYLES
 ***************/
 
 .pageTitle {
-    margin: 0 auto var(--space-xl);
+    margin: var(--space-s) auto var(--space-xl);
     text-align: center;
     font-weight: 900;
 }

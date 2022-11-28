@@ -7,11 +7,11 @@ BUTTON DEFAULTS
     display: inline-block;
     position: relative;
     font-family: var(--sans-serif);
+    font-weight: 800;
     text-decoration: none;
     color: var(--white);
     font-size: var(--step-0);
-    line-height: var(--space-s);
-    font-weight: normal;
+    line-height: 1;
     padding: var(--space-2xs) var(--space-m);
     border: 0;
     border-radius: 4px;

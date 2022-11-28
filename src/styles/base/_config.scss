@@ -36,13 +36,6 @@ $black: #111;
 }
 
 /***************
-CONSISTENT SETTINGS
-***************/
-
-$padding: 40px; // Padding and margins
-$line-height: 44px; // Consistent height for buttons, inputs etc.
-
-/***************
 TYPE SETTINGS
 ***************/
 
@@ -69,10 +62,7 @@ TYPE SETTINGS
     --step-5: clamp(2.03rem, calc(1.24rem + 3.94vw), 4.2rem);
 }
 
-/***************
-FLUID SPACING
-***************/
-
+// Fluid Spacing
 /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1200,22,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
 
 :root {

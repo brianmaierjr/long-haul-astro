@@ -54,23 +54,6 @@ const image = new URL(Astro.props.image || "images/touring.webp", Astro.site);
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={image} />
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-    rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
-    as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
-/>
-<noscript>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
-        rel="stylesheet"
-        type="text/css"
-    />
-</noscript>
-
 <script is:inline>
     // Dark Mode
     if (

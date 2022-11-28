@@ -3,44 +3,9 @@ POST STYLING
 ***************/
 
 .post {
-    header {
+    header,
+    img {
         margin-bottom: var(--space-xl);
-    }
-
-    .postTitle {
-        text-align: center;
-        margin-top: var(--space-l);
-        margin-bottom: var(--space-xs);
-        font-weight: 900;
-    }
-
-    blockquote {
-        margin: var(--space-l) 0;
-        padding: 0;
-        line-height: 1.8;
-        position: relative;
-
-        &:before {
-            content: "";
-            position: absolute;
-            top: calc(var(--space-s) * -1);
-            background: var(--background-color);
-            display: block;
-            height: 2px;
-            width: 150px;
-            left: calc(50% - 75px);
-        }
-
-        &:after {
-            content: "";
-            position: absolute;
-            bottom: calc(var(--space-s) * -1);
-            background: var(--background-color);
-            display: block;
-            height: 2px;
-            width: 150px;
-            left: calc(50% - 75px);
-        }
     }
 
     figure {
@@ -50,22 +15,13 @@ POST STYLING
             text-align: center;
             font-size: var(--step--1);
             font-style: italic;
-            color: lighten($black, 30%);
+            color: var(--text-accent-color);
         }
 
         img {
             margin: 0 auto;
             display: block;
         }
-    }
-
-    img {
-        margin-bottom: var(--space-l);
-    }
-
-    .highlight {
-        clear: both;
-        margin-bottom: var(--step)-l;
     }
 
     .dropcap {
@@ -78,11 +34,12 @@ POST STYLING
     }
 
     .featuredImage {
-        position: relative;
-        margin-top: var(--space-2xs);
-        clip-path: polygon(0 var(--space-s), 100% 0, 100% 100%, 0 100%);
+        // position: relative;
+        // margin-top: var(--space-2xs);
+        // clip-path: polygon(0 var(--space-s), 100% 0, 100% 100%, 0 100%);
 
         img {
+            width: 100%;
             margin-bottom: 0;
         }
     }
@@ -95,21 +52,18 @@ POST STYLING
     }
 }
 
+.article-content {
+    p:first-child {
+        font-size: var(--step-1);
+        line-height: 1.7;
+    }
+}
+
 @media (min-width: 800px) {
     .post {
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        ul,
-        ol,
-        dl,
-        .pageTitle {
+        *:not(blockquote) {
             max-width: 50rem;
-            margin: 0 auto var(--space-xl);
+            margin: 0 auto var(--space-m);
         }
 
         h1,
@@ -124,12 +78,21 @@ POST STYLING
         .h5,
         h6,
         .h6 {
-            margin: var(--space-s) auto;
+            margin: 1em auto var(--space-m);
         }
 
-        .featuredImage {
-            position: relative;
-            margin-top: 2rem;
+        // .featuredImage {
+        //     position: relative;
+        //     margin-top: 2rem;
+        //     clip-path: polygon(0 var(--space-l), 100% 0, 100% 100%, 0 100%);
+        // }
+    }
+}
+
+.post {
+    .pageTitle {
+        @media (min-width: 800px) {
+            margin: 0;
         }
     }
 }

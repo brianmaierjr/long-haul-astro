@@ -4,7 +4,7 @@ POST LIST STYLING
 
 .posts {
     article {
-        margin-bottom: 4rem;
+        margin-bottom: var(--space-xl);
         position: relative;
 
         &:before {
@@ -12,9 +12,14 @@ POST LIST STYLING
             position: absolute;
             bottom: -2rem;
             left: 0;
-            background: var(--text-accent-color);
-            height: 2px;
-            width: 60px;
+            background: var(--subtle-color);
+            height: 0.2em;
+            width: 4rem;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: var(--space-xs);
         }
 
         a {

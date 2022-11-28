@@ -1,9 +1,8 @@
+// Base
 @import "base/normalize";
 @import "base/config";
 @import "base/typography";
 @import "base/global";
-
-@import "base/mixins";
 @import "base/utility";
 
 // Modules
@@ -16,4 +15,3 @@
 
 // Pages
 @import "page/post";
-@import "page/contact";

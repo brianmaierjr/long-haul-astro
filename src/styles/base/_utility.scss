@@ -1,3 +1,20 @@
 .color-white {
     color: var(--white);
 }
+
+.intro {
+    font-size: var(--step-1);
+    line-height: 1.7;
+}
+
+// Flex
+@media (min-width: 800px) {
+    .flex {
+        display: flex;
+        gap: var(--space-l);
+
+        > * {
+            flex: 1;
+        }
+    }
+}

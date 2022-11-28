@@ -2,13 +2,6 @@
 FLUID TYPESCALE FROM UTOPIA.FYI
 ***************/
 
-body {
-    .intro {
-        font-size: var(--step-1);
-        line-height: 1.7;
-    }
-}
-
 h1,
 .h1,
 h2,
@@ -21,7 +14,7 @@ h5,
 .h5,
 h6,
 .h6 {
-    margin: 0.5rem 0 1.5rem;
+    margin: var(--space-2xs) 0 var(--space-m);
     font-family: var(--sans-serif);
     line-height: 1.2;
     font-weight: 800;
@@ -82,9 +75,29 @@ dd {
     margin: 0 0 var(--space-m);
 }
 
-.post ul ul,
-.post ul ol,
-.post ol ul,
-.post ol ol {
-    margin: 0;
+blockquote {
+    margin: var(--space-xl) 0;
+    padding: var(--space-s) 0;
+    line-height: 1.8;
+    position: relative;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        width: 7rem;
+        height: 0.3rem;
+        display: block;
+        background: var(--subtle-color);
+    }
+
+    &:before {
+        top: calc(var(--space-s) * -1);
+        left: calc(50% - 75px);
+    }
+
+    &:after {
+        bottom: calc(var(--space-s) * -1);
+        left: calc(50% - 75px);
+    }
 }

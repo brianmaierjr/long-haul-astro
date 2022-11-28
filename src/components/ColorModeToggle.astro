@@ -4,12 +4,12 @@ import { Icon } from "astro-icon";
 
 <!--- Light mode button --->
 <button class="color-mode__btn light--hidden" aria-label="Toggle light mode">
-    <Icon name="ph:sun" class="color-white" />
+    <Icon name="ph:sun" class="color-white" /> Light
 </button>
 
 <!--- Dark mode button --->
 <button class="color-mode__btn dark--hidden" aria-label="Toggle dark mode">
-    <Icon name="ph:moon" class="color-white" />
+    <Icon name="ph:moon" class="color-white" /> Dark
 </button>
 
 <style lang="scss">
@@ -25,28 +25,36 @@ import { Icon } from "astro-icon";
     }
 
     .color-mode__btn {
-        border-radius: 50%;
+        border-radius: 10em;
+        display: flex;
         border: none;
-        position: absolute;
-        right: 1em;
-        top: 1em;
-        height: 3em;
-        width: 3em;
+        color: currentColor;
+        white-space: nowrap;
+        align-items: center;
+        padding: var(--space-3xs) var(--space-2xs);
+        gap: var(--space-3xs);
         background-color: rgba(0, 0, 0, 0.3);
+        font-size: var(--step--2);
+
+        @media (min-width: 800px) {
+            font-size: var(--step--1);
+        }
 
         svg {
+            flex: auto;
             height: 100%;
             width: 100%;
+            height: var(--space-s);
 
             path {
                 fill: var(--white);
             }
         }
 
-        @media (min-width: 800px) {
-            height: 4em;
-            width: 4em;
-        }
+        // @media (min-width: 800px) {
+        //     height: 4em;
+        //     width: 4em;
+        // }
     }
 </style>
 

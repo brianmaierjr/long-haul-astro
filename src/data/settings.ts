@@ -12,12 +12,12 @@ export const menu = [
     { name: "Contact", link: "/contact" },
     {
         name: "GitHub",
-        link: "https://github.com/brianmaierjr/long-haul",
+        link: "https://github.com/brianmaierjr/long-haul-astro",
         external: true,
     },
     {
         name: "Download Theme",
-        link: "https://github.com/brianmaierjr/long-haul/archive/master.zip",
+        link: "https://github.com/brianmaierjr/long-haul-asto/archive/main.zip",
         external: true,
     },
 ];
