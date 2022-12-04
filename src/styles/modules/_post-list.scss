@@ -2,12 +2,12 @@
 POST LIST STYLING
 ***************/
 
-.postList {
+.post-list {
     article {
         margin-bottom: var(--space-xl);
         position: relative;
 
-        &:before {
+        &:not(:last-child):before {
             content: "";
             position: absolute;
             bottom: calc(var(--space-m) * -1);

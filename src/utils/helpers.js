@@ -18,4 +18,3 @@ export function slugify(string) {
         .replace(/^-+/, "")
         .replace(/-+$/, "");
 }
-

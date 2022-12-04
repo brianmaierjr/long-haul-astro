@@ -69,6 +69,11 @@ object {
     height: auto;
 }
 
+hr {
+    width: 100%;
+    border-color: var(--subtle-color);
+}
+
 // Layout
 .container {
     max-width: min(calc(100% - var(--space-l)), 45rem);
@@ -81,14 +86,6 @@ object {
 
     &--lg {
         max-width: min(calc(100% - var(--space-l)), 70rem);
-    }
-}
-
-.content {
-    @media (min-width: 800px) {
-        padding-top: 0;
-        position: relative;
-        z-index: 1;
     }
 }
 
@@ -107,14 +104,10 @@ pre {
 PAGE STYLES
 ***************/
 
-.pageTitle {
+.page-title {
     margin: var(--space-s) auto var(--space-xl);
     text-align: center;
     font-weight: 900;
-}
-
-.content {
-    padding-top: var(--space-s);
 }
 
 /***************

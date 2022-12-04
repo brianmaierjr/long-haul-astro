@@ -1,17 +1,8 @@
 // Base
-@import "base/normalize";
-@import "base/config";
-@import "base/typography";
-@import "base/global";
-@import "base/utility";
+@use "base";
 
 // Modules
-@import "modules/buttons";
-@import "modules/forms";
-@import "modules/tables";
-@import "modules/post-list";
-@import "modules/post-nav";
-@import "modules/pagination";
+@use "modules";
 
 // Pages
-@import "page/post";
+@use "page";

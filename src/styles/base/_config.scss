@@ -2,11 +2,6 @@
 COLOR VARIABLES
 ***************/
 
-$white: #fff;
-$silver: #ddd;
-$grey: #aaa;
-$black: #111;
-
 :root {
     --white: #fff;
     --silver: #ddd;
@@ -23,6 +18,7 @@ $black: #111;
         --text-accent-color: #393939;
         --bad-color: #ff4136;
         --subtle-color: rgb(228, 228, 228);
+        --link-color: #2b8251;
     }
 
     &[color-mode="dark"] {
@@ -32,11 +28,13 @@ $black: #111;
         --primary-color: seagreen;
         --bad-color: #ff4136;
         --subtle-color: rgb(41, 41, 41);
+        --link-color: #33995f;
     }
 }
 
 /***************
 TYPE SETTINGS
+Use system fonts via https://systemfontstack.com/
 ***************/
 
 :root {

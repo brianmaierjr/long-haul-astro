@@ -3,6 +3,12 @@ POST STYLING
 ***************/
 
 .post {
+    .postTitle {
+        margin: var(--space-s) auto var(--space-xs);
+        text-align: center;
+        font-weight: 900;
+    }
+
     header,
     img {
         margin-bottom: var(--space-xl);
@@ -52,7 +58,7 @@ POST STYLING
         }
     }
 
-    .meta {
+    .postMeta {
         text-align: center;
         color: lighten(black, 50%);
         font-family: var(--sans-serif);
@@ -84,43 +90,5 @@ POST STYLING
     p:first-child {
         font-size: var(--step-1);
         line-height: 1.7;
-    }
-}
-
-@media (min-width: 800px) {
-    .post {
-        > * {
-            // max-width: 50rem;
-            // margin: 0 auto var(--space-m);
-        }
-
-        h1,
-        .h1,
-        h2,
-        .h2,
-        h3,
-        .h3,
-        h4,
-        .h4,
-        h5,
-        .h5,
-        h6,
-        .h6 {
-            // margin: 1em auto var(--space-m);
-        }
-
-        // .featuredImage {
-        //     position: relative;
-        //     margin-top: 2rem;
-        //     clip-path: polygon(0 var(--space-l), 100% 0, 100% 100%, 0 100%);
-        // }
-    }
-}
-
-.post {
-    .postTitle {
-        margin: var(--space-s) auto var(--space-xs);
-        text-align: center;
-        font-weight: 900;
     }
 }
