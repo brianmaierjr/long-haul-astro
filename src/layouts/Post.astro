@@ -2,12 +2,11 @@
 import "../styles/style.scss";
 import { formatDate } from "../utils/helpers";
 import Layout from "./Layout.astro";
-import PostNavigation from "../components/PostNavigation.astro";
 
 const { frontmatter } = Astro.props;
 ---
 
-<Layout title={frontmatter.title}>
+<Layout title={frontmatter.title} description={frontmatter.description}>
     <article class="post">
         {
             frontmatter.image && (

@@ -7,15 +7,18 @@ posts.sort(
     (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
 );
 
-const paginatedPosts = posts.slice(0, 5);
+const seo = {
+    title: "Long Haul Astro Theme",
+    description: "A minimal Astro theme for long-form writing.",
+};
 ---
 
-<Layout title="Long Haul Astro Theme">
+<Layout seo={seo}>
     <div class="container">
         <h2 class="page-title h1">Recent Posts</h2>
         <div class="post-list no-list">
             {
-                paginatedPosts.map((post) => (
+                posts.map((post) => (
                     <article>
                         <time datetime={post.frontmatter.date} class="date">
                             {formatDate(post.frontmatter.date)}

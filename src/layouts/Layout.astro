@@ -1,20 +1,21 @@
 ---
-export interface Props {
-    title: string;
-}
-
-const { title } = Astro.props;
-
 import BaseHead from "../components/BaseHead.astro";
+import type { Props as BaseHeadProps } from "../components/BaseHead.astro";
 import SiteHeader from "../components/Header.astro";
 import SiteFooter from "../components/Footer.astro";
 import "../styles/style.scss";
 import SkipToLink from "../components/SkipToLink.astro";
+
+export interface Props {
+    seo?: BaseHeadProps;
+}
+
+const { seo } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="js" color-mode="light">
-    <BaseHead />
+<html lang="en" color-mode="light">
+    <BaseHead {...seo} />
     <body>
         <SkipToLink />
         <SiteHeader />
