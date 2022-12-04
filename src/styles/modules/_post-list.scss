@@ -2,7 +2,7 @@
 POST LIST STYLING
 ***************/
 
-.posts {
+.postList {
     article {
         margin-bottom: var(--space-xl);
         position: relative;
@@ -10,7 +10,7 @@ POST LIST STYLING
         &:before {
             content: "";
             position: absolute;
-            bottom: -2rem;
+            bottom: calc(var(--space-m) * -1);
             left: 0;
             background: var(--subtle-color);
             height: 0.2em;
@@ -20,15 +20,15 @@ POST LIST STYLING
         h2 {
             margin-top: 0;
             margin-bottom: var(--space-xs);
-        }
 
-        a {
-            text-decoration: none;
-            font-weight: 800;
+            a {
+                text-decoration: none;
+                font-weight: 800;
 
-            &:hover,
-            &:focus {
-                text-decoration: underline;
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                }
             }
         }
 

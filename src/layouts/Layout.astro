@@ -19,20 +19,7 @@ import SkipToLink from "../components/SkipToLink.astro";
         <SkipToLink />
         <SiteHeader />
         <main class="content" id="main">
-            {
-                Astro.url.pathname == "/contact" && (
-                    <div class="container container--lg">
-                        <slot />
-                    </div>
-                )
-            }
-            {
-                Astro.url.pathname != "/contact" && (
-                    <div class="container">
-                        <slot />
-                    </div>
-                )
-            }
+            <slot />
         </main><!-- end .content -->
         <SiteFooter />
     </body>

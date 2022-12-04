@@ -3,12 +3,15 @@ import Layout from "../layouts/Layout.astro";
 import { formatDate } from "../utils/helpers";
 
 const posts = await Astro.glob("./blog/*.md");
+posts.sort(
+    (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+);
 ---
 
 <Layout title="Long Haul Astro Theme">
-    <div class="home" id="home">
+    <div class="container">
         <h2 class="pageTitle h1">Recent Posts</h2>
-        <div class="posts noList">
+        <div class="postList noList">
             {
                 posts.map((post) => (
                     <article>
@@ -16,9 +19,7 @@ const posts = await Astro.glob("./blog/*.md");
                             {formatDate(post.frontmatter.date)}
                         </span>
                         <h2 class="h3">
-                            <a class="post-link" href={post.url}>
-                                {post.frontmatter.title}
-                            </a>
+                            <a href={post.url}>{post.frontmatter.title}</a>
                         </h2>
                         <p>{post.frontmatter.description}</p>
                     </article>

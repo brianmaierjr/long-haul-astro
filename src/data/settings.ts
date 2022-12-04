@@ -16,7 +16,7 @@ export const menu = [
         external: true,
     },
     {
-        name: "Download Theme",
+        name: "Download",
         link: "https://github.com/brianmaierjr/long-haul-asto/archive/main.zip",
         external: true,
     },
