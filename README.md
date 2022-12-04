@@ -52,6 +52,7 @@ Astro has [an in-depth guide](https://docs.astro.build/en/guides/deploy/) on how
 
 ## To Do
 
+-   Fix Homepage Title/Description not working...
 -   Hamburger Menu
 -   Build Out ReadMe
 
