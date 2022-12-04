@@ -2,11 +2,18 @@
 import "../styles/style.scss";
 import { formatDate } from "../utils/helpers";
 import Layout from "./Layout.astro";
+import { settings } from "../data/settings";
 
 const { frontmatter } = Astro.props;
+
+const seo = {
+    title: frontmatter.title + " | " + settings.title,
+    description: frontmatter.description,
+    image: frontmatter.image,
+};
 ---
 
-<Layout title={frontmatter.title} description={frontmatter.description}>
+<Layout seo={seo}>
     <article class="post">
         {
             frontmatter.image && (
