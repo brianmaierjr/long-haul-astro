@@ -18,8 +18,8 @@ const seo = {
                         changes then do so in the <code>contact.astro</code> file.
                     </p>
                     <p>
-                        The form on this page is a generic html form. Connect it
-                        to your favorite service to make it functional.
+                        The form on this page is connected via Netlify. It's
+                        really easy to use
                     </p>
                     <p>
                         If you have questions about the theme feel free to <a
@@ -30,7 +30,7 @@ const seo = {
                         >. Enjoy!
                     </p>
                 </div>
-                <form>
+                <form name="contact" method="POST" data-netlify="true">
                     <label for="name">Name</label>
                     <input
                         type="text"
