@@ -1,6 +1,6 @@
 ![preview Long Haul](/preview.jpg)
 
-# Welcome to the Long Haul Theme for Astro
+# Long Haul Theme for Astro
 
 Long Haul is a minimal, long form, theme for Astro. I originally built this theme for Jekyll about 8 years ago(geez I'm old). Somehow that theme has almost 700 forks and almost 600 stars [on GitHub](https://github.com/brianmaierjr/long-haul) so I figured I'd bring it into the future with Astro 🚀.
 
@@ -8,6 +8,7 @@ Long Haul is a minimal, long form, theme for Astro. I originally built this them
 
 -   ✅ Built with Astro, duh
 -   ✅ Automatic Sitemap
+-   ✅ A modern CSS reset by [Andy Bell](https://piccalil.li/blog/a-modern-css-reset/)
 -   ✅ Generated Robots.txt via [astro-robots-txt](https://github.com/alextim/astro-lib/tree/main/packages/astro-robots-txt#readme)
 -   ✅ XML Feed for RSS Readers
 -   ✅ Featured Post Images
@@ -49,17 +50,6 @@ All commands are run from the root of the project, from a terminal:
 Feel free to deploy and host your site on your favorite static hosting service such as Netlify, Firebase Hosting, Vercel, GitHub Pages, etc.
 
 Astro has [an in-depth guide](https://docs.astro.build/en/guides/deploy/) on how to deploy an Astro project to each service.
-
-## To Do
-
--   Fix Homepage Title/Description not working...
--   Hamburger Menu
--   Build Out ReadMe
-
-## Future Features
-
--   Finish Post Navigation
--   Add Pagination to Home Page
 
 ## License
 

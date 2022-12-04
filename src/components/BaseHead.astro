@@ -7,7 +7,7 @@ export interface Props {
     image?: string;
 }
 
-const title = Astro.props.title + " | " + settings.title || settings.title;
+const title = Astro.props.title || settings.title;
 const description = Astro.props.description || settings.description;
 const image = new URL(Astro.props.image || "images/touring.webp", Astro.site);
 ---
