@@ -1,11 +1,12 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import compress from "astro-compress";
+import robotsTxt from "astro-robots-txt";
 
 // https://astro.build/config
 export default defineConfig({
     site: "https://long-haul-astro.netlify.app",
-    integrations: [sitemap(), compress()],
+    integrations: [sitemap(), compress(), robotsTxt()],
     markdown: {
         shikiConfig: {
             // Choose from Shiki's built-in themes (or add your own)
