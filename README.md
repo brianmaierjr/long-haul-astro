@@ -1,4 +1,4 @@
-![preview Long Haul](/repository/public/images/preview.jpg?raw=true)
+![preview Long Haul](/preview.jpg)
 
 # Welcome to the Long Haul Theme for Astro
 
