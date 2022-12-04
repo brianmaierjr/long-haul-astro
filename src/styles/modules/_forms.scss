@@ -14,7 +14,7 @@ textarea {
     outline: none;
     border: none;
     height: auto;
-    padding: var(--space-xs);
+    padding: var(--space-2xs);
     width: 300px;
     margin-bottom: var(--space-xs);
 
@@ -26,8 +26,15 @@ textarea {
         width: 100%;
     }
 }
+
+input[type="submit"] {
+    width: auto;
+    display: flex;
+    margin-left: auto;
+}
+
 textarea {
-    height: var(--space-4xl);
+    height: 8em;
 }
 
 form {
