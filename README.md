@@ -16,6 +16,9 @@ Long Haul is a minimal, long form, theme for Astro. I originally built this them
 -   ✅ Icons Provided by [Astro Icons](https://www.astroicon.dev/)
 -   ✅ Fluid Type and Space Scale from [UTOPIA](https://utopia.fyi)
 -   ✅ Compression via [Astro Compress](https://github.com/astro-community/astro-compress)
+-   ✅ Skip To Main Content Link
+-   ✅ Accessible Focus Styling
+-   ✅ Accessible Mobile Menu
 -   ✅ Lightning Fast ⚡ lightLighthouse Score
 
 ## Get Started

@@ -1,0 +1,67 @@
+---
+import { menu } from "../../data/settings";
+import MenuToggle from "./../toggle/Menu.astro";
+import type { Props as MobileMenuProps } from "../menu/Mobile.astro";
+export interface Props {
+    open?: MobileMenuProps;
+}
+
+const { open } = Astro.props;
+---
+
+<nav
+    x-data={open}
+    aria-label="Mobile Navigation"
+    class="mobile-nav"
+    aria-labelledby="mobile-nav-heading"
+    x-show="open"
+    x-bind:aria-expanded="open"
+>
+    <div class="nav-header">
+        <h2 class="h3" id="mobile-nav-heading">Long Haul Menu</h2>
+        <MenuToggle />
+    </div>
+
+    <ul class="no-list">
+        {
+            menu.map((item, index) => (
+                <>
+                    <li class="element">
+                        <a href={item.link}>{item.name}</a>
+                    </li>
+                </>
+            ))
+        }
+    </ul>
+</nav>
+
+<style lang="scss">
+    .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: var(--primary-color);
+        z-index: 10;
+        padding: var(--space-m);
+        overflow: auto;
+
+        h2 {
+            color: var(--white);
+        }
+        a {
+            color: var(--white);
+            padding: var(--space-2xs) 0;
+            display: flex;
+            text-decoration: none;
+        }
+    }
+
+    .nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>

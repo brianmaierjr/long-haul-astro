@@ -11,8 +11,11 @@
         "astro": "astro"
     },
     "dependencies": {
+        "@astrojs/alpinejs": "^0.1.2",
         "@astrojs/rss": "^1.0.3",
         "@astrojs/sitemap": "^1.0.0",
+        "@types/alpinejs": "^3.7.1",
+        "alpinejs": "^3.10.5",
         "astro": "^1.6.7",
         "astro-compress": "^1.1.15",
         "astro-icon": "^0.8.0"

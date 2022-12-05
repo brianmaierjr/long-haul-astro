@@ -1,7 +1,7 @@
 ---
-import { settings, menu } from "../data/settings";
-import ColorModeToggle from "./ColorModeToggle.astro";
+import { settings } from "../data/settings";
 const title = "Long Haul Astro";
+import MainNav from "./menu/Main.astro";
 ---
 
 <header class="header">
@@ -20,22 +20,7 @@ const title = "Long Haul Astro";
                 </p>
             )
         }
-        <nav>
-            <ul class="no-list">
-                {
-                    menu.map((item, index) => (
-                        <>
-                            <li class="element">
-                                <a href={item.link}>{item.name}</a>
-                            </li>
-                        </>
-                    ))
-                }
-                <li>
-                    <ColorModeToggle />
-                </li>
-            </ul>
-        </nav>
+        <MainNav />
     </div>
 </header>
 
@@ -49,7 +34,7 @@ const title = "Long Haul Astro";
         background-position: center center;
         color: white;
         padding-top: var(--space-m);
-        padding-bottom: var(--space-xl);
+        padding-bottom: var(--space-l);
         clip-path: polygon(
             0 0,
             100% 0,
@@ -58,7 +43,6 @@ const title = "Long Haul Astro";
         );
 
         @media (min-width: 800px) {
-            // height: 15em;
             position: relative;
             padding-block: var(--space-3xl);
             clip-path: polygon(
@@ -69,15 +53,33 @@ const title = "Long Haul Astro";
             );
         }
 
-        // .container {
-        //     @media (min-width: 800px) {
-        //         position: relative;
-        //         top: 50%;
-        //         transform: translateY(-50%);
-        //         max-width: 800px;
-        //         overflow: hidden;
-        //     }
-        // }
+        button {
+            border-radius: 10em;
+            display: flex;
+            border: none;
+            color: currentColor;
+            white-space: nowrap;
+            align-items: center;
+            padding: var(--space-2xs) var(--space-2xs);
+            gap: var(--space-3xs);
+            background-color: rgba(0, 0, 0, 0.3);
+            font-size: var(--step--2);
+
+            @media (min-width: 800px) {
+                display: none;
+            }
+
+            svg {
+                flex: auto;
+                height: 100%;
+                width: 100%;
+                height: var(--space-s);
+
+                path {
+                    fill: var(--white);
+                }
+            }
+        }
 
         &__title {
             margin: 0;
@@ -106,44 +108,16 @@ const title = "Long Haul Astro";
                 }
             }
         }
+    }
 
-        nav {
-            ul {
-                margin: 0;
-                display: flex;
-                flex-wrap: wrap;
-                line-height: 1;
-                align-items: center;
-                justify-items: flex-start;
-                gap: var(--space-2xs);
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-                @media (min-width: 800px) {
-                    gap: var(--space-xs);
-                }
-
-                li {
-                    a {
-                        color: white;
-                        font-size: var(--step--2);
-                        text-decoration: none;
-                        line-height: 1;
-
-                        @media (min-width: 800px) {
-                            font-size: var(--step--1);
-                        }
-
-                        &:hover,
-                        &:focus {
-                            text-decoration: underline;
-                        }
-                    }
-
-                    &.current {
-                        padding-bottom: 0 var(--space-3xs);
-                        border-bottom: 4px solid rgba(255, 255, 255, 0.4);
-                    }
-                }
-            }
+        @media (min-width: 800px) {
+            flex-direction: column;
+            align-items: flex-start;
         }
     }
 </style>

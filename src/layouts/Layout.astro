@@ -1,10 +1,11 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import type { Props as BaseHeadProps } from "../components/BaseHead.astro";
 import SiteHeader from "../components/Header.astro";
 import SiteFooter from "../components/Footer.astro";
-import "../styles/style.scss";
 import SkipToLink from "../components/SkipToLink.astro";
+import MobileMenu from "../components/menu/Mobile.astro";
+import type { Props as BaseHeadProps } from "../components/BaseHead.astro";
+import "../styles/style.scss";
 
 export interface Props {
     seo?: BaseHeadProps;
@@ -19,6 +20,7 @@ const { seo } = Astro.props;
     <body>
         <SkipToLink />
         <SiteHeader />
+        <MobileMenu />
         <main class="content" id="main">
             <slot />
         </main><!-- end .content -->
