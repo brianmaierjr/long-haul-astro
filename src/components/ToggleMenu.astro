@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon";
+
+interface Props {
+    icon: string;
+}
+
+const { icon } = Astro.props;
+---
+
+<button aria-label="Toggle Menu" class="toggle-menu toggle__btn">
+    <Icon name={icon} class="color-white" />
+</button>
+
+<style lang="scss">
+    // Toggle Button
+    .toggle__btn {
+        border-radius: 10em;
+        display: flex;
+        border: none;
+        color: currentColor;
+        white-space: nowrap;
+        align-items: center;
+        height: 3rem;
+        width: 3rem;
+        padding: var(--space-2xs);
+        gap: var(--space-3xs);
+        background-color: rgba(0, 0, 0, 0.3);
+        font-size: var(--step--2);
+
+        @media (min-width: 800px) {
+            display: none;
+        }
+
+        svg {
+            flex: auto;
+            height: 100%;
+            width: 100%;
+
+            path {
+                fill: var(--white);
+            }
+        }
+    }
+</style>

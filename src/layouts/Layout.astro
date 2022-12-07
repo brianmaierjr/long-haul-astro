@@ -19,8 +19,8 @@ const { seo } = Astro.props;
     <BaseHead {...seo} />
     <body>
         <SkipToLink />
-        <SiteHeader />
         <MobileMenu />
+        <SiteHeader />
         <main class="content" id="main">
             <slot />
         </main><!-- end .content -->
