@@ -1,6 +1,5 @@
 ---
 import { settings } from "../data/settings";
-const title = "Long Haul Astro";
 import MainNav from "./menu/Main.astro";
 ---
 
@@ -9,14 +8,14 @@ import MainNav from "./menu/Main.astro";
         {
             Astro.url.pathname == "/" && (
                 <h1 class="header__title">
-                    <a href="/">{title ?? settings.title}</a>
+                    <a href="/">{settings.title}</a>
                 </h1>
             )
         }
         {
             Astro.url.pathname != "/" && (
                 <p class="header__title">
-                    <a href="/">{title ?? settings.title}</a>
+                    <a href="/">{settings.title}</a>
                 </p>
             )
         }
@@ -80,32 +79,31 @@ import MainNav from "./menu/Main.astro";
                 }
             }
         }
+    }
 
-        &__title {
+    :global(.header__title) {
+        margin: 0;
+        font-size: var(--step-0);
+        font-family: var(--sans-serif);
+        font-weight: 900;
+        text-transform: uppercase;
+
+        @media (min-width: 800px) {
+            font-size: var(--step-5);
+            padding-bottom: var(--space-xs);
+            line-height: 1;
+            letter-spacing: -1.5px;
+            padding-left: 0;
             margin: 0;
-            font-size: var(--step-0);
-            // padding-bottom: var(--space-2xs);
-            font-family: var(--sans-serif);
-            font-weight: 900;
-            text-transform: uppercase;
+        }
 
-            @media (min-width: 800px) {
-                font-size: var(--step-5);
-                padding-bottom: var(--space-xs);
-                line-height: 1;
-                letter-spacing: -1.5px;
-                padding-left: 0;
-                margin: 0;
-            }
+        a {
+            color: white;
+            text-decoration: none;
 
-            a {
-                color: white;
-                text-decoration: none;
-
-                &:hover,
-                &:focus {
-                    text-decoration: underline;
-                }
+            &:hover,
+            &:focus {
+                text-decoration: underline;
             }
         }
     }

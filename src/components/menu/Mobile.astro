@@ -1,12 +1,7 @@
 ---
 import { menu } from "../../data/settings";
-import type { Props as MobileMenuProps } from "../menu/Mobile.astro";
 import ToggleMenu from "../ToggleMenu.astro";
-export interface Props {
-    open?: MobileMenuProps;
-}
-
-const { open } = Astro.props;
+import { settings } from "../../data/settings";
 ---
 
 <script type="module">
@@ -22,13 +17,12 @@ const { open } = Astro.props;
 </script>
 
 <nav
-    x-data={open}
     aria-label="Mobile Navigation"
     class="mobile-nav"
     aria-labelledby="mobile-nav-heading"
 >
     <div class="nav-header">
-        <h2 class="h3" id="mobile-nav-heading">Long Haul Menu</h2>
+        <h2 class="header__title">{settings.title}</h2>
         <ToggleMenu icon="ic:baseline-close" />
     </div>
 
@@ -70,6 +64,10 @@ const { open } = Astro.props;
             padding: var(--space-2xs) 0;
             display: flex;
             text-decoration: none;
+        }
+
+        .mobile-nav-heading {
+            margin: 0;
         }
     }
 
