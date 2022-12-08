@@ -14,7 +14,6 @@
         "@astrojs/alpinejs": "^0.1.2",
         "@astrojs/rss": "^1.0.3",
         "@astrojs/sitemap": "^1.0.0",
-        "@types/alpinejs": "^3.7.1",
         "alpinejs": "^3.10.5",
         "astro": "^1.6.7",
         "astro-compress": "^1.1.15",
@@ -22,6 +21,7 @@
     },
     "devDependencies": {
         "astro-robots-txt": "^0.3.10",
-        "sass": "^1.56.1"
+        "sass": "^1.56.1",
+        "swup": "^2.0.19"
     }
 }
