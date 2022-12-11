@@ -21,7 +21,6 @@
     },
     "devDependencies": {
         "astro-robots-txt": "^0.3.10",
-        "sass": "^1.56.1",
-        "swup": "^2.0.19"
+        "sass": "^1.56.1"
     }
 }

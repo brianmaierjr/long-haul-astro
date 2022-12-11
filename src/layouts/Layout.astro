@@ -14,31 +14,15 @@ export interface Props {
 const { seo } = Astro.props;
 ---
 
-<script type="module">
-    import Swup from "swup";
-    const swup = new Swup();
-</script>
-
 <html lang="en" color-mode="light">
     <BaseHead {...seo} />
     <body>
         <SkipToLink />
         <MobileMenu triggerId="mobile-menu-trigger" />
         <SiteHeader />
-        <main class="content transition-fade" id="main">
+        <main class="contentx" id="main">
             <slot />
         </main><!-- end .content -->
         <SiteFooter />
     </body>
 </html>
-
-<style>
-    .transition-fade {
-        transition: 0.4s;
-        opacity: 1;
-    }
-
-    html.is-animating .transition-fade {
-        opacity: 0;
-    }
-</style>
