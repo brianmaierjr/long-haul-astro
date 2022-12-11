@@ -5,10 +5,16 @@ interface Props {
     icon: string;
 }
 
-const { icon } = Astro.props;
+const { icon, additionalClasses } = Astro.props;
 ---
 
-<button aria-label="Toggle Menu" class="toggle-menu toggle__btn">
+<button
+    id="mobile-menu-trigger"
+    aria-label="Toggle Menu"
+    class="toggle-menu toggle__btn"
+    :class={additionalClasses}
+>
+    <span class="sr-only">Open Mobile Navigation Menu</span>
     <Icon name={icon} class="color-white" />
 </button>
 
