@@ -29,6 +29,10 @@ body {
     background-color: var(--surface1);
     font-size: var(--step-0);
 
+    &.modal-is-active {
+        overflow: hidden;
+    }
+
     p,
     ul {
         margin: 0 0 var(--space-l);

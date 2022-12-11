@@ -5,17 +5,20 @@
     @use "../styles/modules/buttons.scss" as *;
 
     .skip-to-content-link {
-        left: 1em;
-        top: 0.5em;
         position: absolute;
-        z-index: -1;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
         @extend .button;
-        transition: transform 0.3s;
-        transform: translateY(-150%);
     }
 
     .skip-to-content-link:focus {
-        transform: translateY(0%);
-        z-index: 5;
+        left: 1em;
+        top: 1em;
+        width: auto;
+        height: auto;
+        z-index: 10;
     }
 </style>

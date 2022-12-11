@@ -18,11 +18,11 @@ const { seo } = Astro.props;
     <BaseHead {...seo} />
     <body>
         <SkipToLink />
-        <MobileMenu triggerId="mobile-menu-trigger" />
+        <MobileMenu triggerId="mobile-menu-trigger" title="Mobile Menu" />
         <SiteHeader />
-        <main class="contentx" id="main">
+        <main class="content" id="main">
             <slot />
-        </main><!-- end .content -->
+        </main>
         <SiteFooter />
     </body>
 </html>

@@ -1,7 +1,7 @@
 ---
 import { menu } from "../data/settings";
-import ToggleMenu from "./ToggleMenu.astro";
 import { settings } from "../data/settings";
+import { Icon } from "astro-icon";
 const { triggerId } = Astro.props;
 ---
 
@@ -45,10 +45,10 @@ const { triggerId } = Astro.props;
         }
     };
     const openModal = (_) => {
-        const modalTitle = modal.querySelector("h3");
+        const firstLink = modal.querySelector(".modalFirstLink");
         modal.classList.add("show");
         body.classList.add("modal-is-active");
-        modalTitle.focus();
+        firstLink.focus();
         document.addEventListener("keydown", trapFocus);
         modal.addEventListener("keydown", (event) => {
             if (event.key === "Escape") {
@@ -74,18 +74,33 @@ const { triggerId } = Astro.props;
     window.closeModal = closeModal;
 </script>
 
-<nav class="modal mobile-nav" role="dialog" aria-labelledby={triggerId}>
+<nav
+    class="modal mobile-nav"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby={triggerId}
+>
     <div class="nav-header">
         <h2 class="header__title">{settings.title}</h2>
-        <ToggleMenu additionalClasses="modal__close" icon="ic:baseline-close" />
+        <div class="modal__close">
+            <button class="toggle-menu toggle__btn">
+                <span class="sr-only">Close Mobile Navigation Menu</span>
+                <Icon name="ic:baseline-close" class="color-white" />
+            </button>
+        </div>
     </div>
 
     <ul class="no-list">
         {
             menu.map((item, index) => (
                 <>
-                    <li class="element">
-                        <a href={item.link}>{item.name}</a>
+                    <li>
+                        <a
+                            class={index === 0 ? "modalFirstLink" : ""}
+                            href={item.link}
+                        >
+                            {item.name}
+                        </a>
                     </li>
                 </>
             ))
@@ -94,10 +109,12 @@ const { triggerId } = Astro.props;
 </nav>
 
 <style lang="scss">
-    .mobile-nav {
+    .modal {
         height: 0;
         position: fixed;
         visibility: hidden;
+        width: 100vw;
+        height: 100vh;
         z-index: -10;
         top: 0;
         left: 0;
@@ -105,9 +122,9 @@ const { triggerId } = Astro.props;
         padding: var(--space-m);
         overflow: auto;
 
-        &.active {
+        &.show {
             z-index: 10;
-            display: block;
+            visibility: visible;
         }
 
         h2 {
@@ -125,9 +142,56 @@ const { triggerId } = Astro.props;
         }
     }
 
+    li {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+        &:first-of-type {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        &:focus-within {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            font-family: var(--sans-serif);
+            font-weight: 300;
+
+            &:focus {
+                padding-left: 0.5em;
+            }
+        }
+    }
+
     .nav-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: var(--space-l);
+    }
+
+    .toggle__btn {
+        border-radius: 10em;
+        display: flex;
+        border: none;
+        color: currentColor;
+        white-space: nowrap;
+        align-items: center;
+        height: 3rem;
+        width: 3rem;
+        padding: var(--space-2xs);
+        gap: var(--space-3xs);
+        background-color: rgba(0, 0, 0, 0.3);
+        font-size: var(--step--2);
+
+        svg {
+            flex: auto;
+            height: 100%;
+            width: 100%;
+
+            path {
+                fill: var(--white);
+            }
+        }
     }
 </style>

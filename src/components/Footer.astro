@@ -12,7 +12,31 @@ const date = new Date();
             <a href="http://astro.build" target="_blank">Astro</a>
         </p>
 
-        <div class="footer-links"></div>
+        <div class="footer-links">
+            <ul class="noList social">
+                {
+                    social.map((item, index) => (
+                        <>
+                            <li>
+                                <a
+                                    class="social__link"
+                                    href={item.url}
+                                    target="_blank"
+                                >
+                                    <span class="sr-only">
+                                        {settings.title} on {item.name}
+                                    </span>
+                                    <Icon
+                                        class="social__icon"
+                                        name={item.icon}
+                                    />
+                                </a>
+                            </li>
+                        </>
+                    ))
+                }
+            </ul>
+        </div>
     </div>
 </footer>
 
