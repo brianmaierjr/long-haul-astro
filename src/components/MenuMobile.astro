@@ -6,14 +6,12 @@ const { triggerId } = Astro.props;
 ---
 
 <script type="module">
-    // variables
     const body = document.querySelector("body");
     const modal = document.querySelector(".modal");
     const modalId = modal.getAttribute("aria-labelledby");
     const modalCloseButton = modal.querySelector(".modal__close button");
     const modalTrigger = document.querySelector(`#${modalId}`);
 
-    // functions
     const teleportToRoot = (element) => {
         element.remove();
         body.appendChild(element);

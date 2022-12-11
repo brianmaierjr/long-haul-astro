@@ -55,7 +55,7 @@ import { Icon } from "astro-icon";
     }
 </style>
 
-<script type="module">
+<script is:inline>
     if (window.CSS && CSS.supports("color", "var(--primary)")) {
         var toggleColorMode = function toggleColorMode(e) {
             // Switch to Light Mode
