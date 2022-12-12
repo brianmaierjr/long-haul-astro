@@ -2,6 +2,7 @@
 import { menu } from "../data/settings";
 import { settings } from "../data/settings";
 import { Icon } from "astro-icon";
+import SocialMenu from "./SocialMenu.astro";
 ---
 
 <script type="module">
@@ -100,6 +101,7 @@ import { Icon } from "astro-icon";
             ))
         }
     </ul>
+    <SocialMenu />
 </nav>
 
 <style lang="scss">
@@ -187,5 +189,9 @@ import { Icon } from "astro-icon";
                 fill: var(--white);
             }
         }
+    }
+
+    .social {
+        text-align: left;
     }
 </style>
