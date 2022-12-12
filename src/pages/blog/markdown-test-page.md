@@ -99,12 +99,12 @@ This is a new paragraph!
 -   Item 2
     -   Sub-item 1
 
-```markdwon
+```markdown
 -   Item 1
-   -   Sub-item 1
-   -   Sub-item 2
+-   Sub-item 1
+-   Sub-item 2
 -   Item 2
-   -   Sub-item 1
+-   Sub-item 1
 ```
 
 ### Ordered List
