@@ -1,11 +1,12 @@
 ---
 import { settings } from "../data/settings";
-import MainNav from "./MenuMain.astro";
+import MenuMain from "./MenuMain.astro";
 ---
 
 <header class="header">
     <div class="container">
         {
+            // H1 on homepage, P on other pages
             Astro.url.pathname == "/" && (
                 <h1 class="header__title">
                     <a href="/">{settings.title}</a>
@@ -19,7 +20,7 @@ import MainNav from "./MenuMain.astro";
                 </p>
             )
         }
-        <MainNav />
+        <MenuMain />
     </div>
 </header>
 
@@ -51,34 +52,6 @@ import MainNav from "./MenuMain.astro";
                 100% calc(100% - var(--space-2xl)),
                 0 100%
             );
-        }
-
-        button {
-            border-radius: 10em;
-            display: flex;
-            border: none;
-            color: currentColor;
-            white-space: nowrap;
-            align-items: center;
-            padding: var(--space-2xs) var(--space-2xs);
-            gap: var(--space-3xs);
-            background-color: rgba(0, 0, 0, 0.3);
-            font-size: var(--step--2);
-
-            @media (min-width: 800px) {
-                display: none;
-            }
-
-            svg {
-                flex: auto;
-                height: 100%;
-                width: 100%;
-                height: var(--space-s);
-
-                path {
-                    fill: var(--white);
-                }
-            }
         }
     }
 

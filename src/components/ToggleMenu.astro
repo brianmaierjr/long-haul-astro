@@ -3,16 +3,12 @@ import { Icon } from "astro-icon";
 
 interface Props {
     icon: string;
-    additionalClasses?: string;
 }
 
-const { icon, additionalClasses } = Astro.props;
+const { icon } = Astro.props;
 ---
 
-<button
-    id="mobile-menu-trigger"
-    class={`toggle-menu toggle__btn ${additionalClasses}`}
->
+<button id="mobile-menu-trigger" class="toggle-menu toggle__btn">
     <span class="sr-only">Open Mobile Navigation Menu</span>
     <Icon name={icon} class="color-white" />
 </button>

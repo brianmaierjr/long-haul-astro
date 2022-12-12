@@ -126,3 +126,28 @@ a {
         text-decoration: none;
     }
 }
+
+/***************
+MISC UTILITY STYLES
+***************/
+
+.color-white {
+    color: var(--white);
+}
+
+.no-list {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.flex {
+    @media (min-width: 800px) {
+        display: flex;
+        gap: var(--space-l);
+
+        > * {
+            flex: 1;
+        }
+    }
+}

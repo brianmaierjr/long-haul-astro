@@ -1,9 +1,9 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import SiteHeader from "../components/Header.astro";
-import SiteFooter from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import SkipToLink from "../components/SkipToLink.astro";
-import MobileMenu from "../components/MenuMobile.astro";
+import MenuMobile from "../components/MenuMobile.astro";
 import type { Props as BaseHeadProps } from "../components/BaseHead.astro";
 import "../styles/style.scss";
 
@@ -18,11 +18,11 @@ const { seo } = Astro.props;
     <BaseHead {...seo} />
     <body>
         <SkipToLink />
-        <MobileMenu triggerId="mobile-menu-trigger" title="Mobile Menu" />
-        <SiteHeader />
-        <main class="content" id="main">
+        <MenuMobile />
+        <Header />
+        <main id="main">
             <slot />
         </main>
-        <SiteFooter />
+        <Footer />
     </body>
 </html>

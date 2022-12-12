@@ -2,7 +2,6 @@
 import { menu } from "../data/settings";
 import { settings } from "../data/settings";
 import { Icon } from "astro-icon";
-const { triggerId } = Astro.props;
 ---
 
 <script type="module">
@@ -45,10 +44,11 @@ const { triggerId } = Astro.props;
         }
     };
     const openModal = (_) => {
-        const firstLink = modal.querySelector(".modalFirstLink");
+        const focusables = getKeyboardFocusableElements(modal);
+        const firstFocusable = focusables[0];
         modal.classList.add("show");
         body.classList.add("modal-is-active");
-        firstLink.focus();
+        firstFocusable.focus();
         document.addEventListener("keydown", trapFocus);
         modal.addEventListener("keydown", (event) => {
             if (event.key === "Escape") {
@@ -62,7 +62,6 @@ const { triggerId } = Astro.props;
         modalTrigger.focus({ preventScroll: true });
         document.removeEventListener("keydown", trapFocus);
     };
-    // execution
     teleportToRoot(modal);
     modalTrigger.addEventListener("click", openModal);
     modalCloseButton.addEventListener("click", closeModal);
@@ -78,7 +77,7 @@ const { triggerId } = Astro.props;
     class="modal mobile-nav"
     role="dialog"
     aria-modal="true"
-    aria-labelledby={triggerId}
+    aria-labelledby="mobile-menu-trigger"
 >
     <div class="nav-header">
         <h2 class="header__title">{settings.title}</h2>
@@ -92,15 +91,10 @@ const { triggerId } = Astro.props;
 
     <ul class="no-list">
         {
-            menu.map((item, index) => (
+            menu.map((item) => (
                 <>
                     <li>
-                        <a
-                            class={index === 0 ? "modalFirstLink" : ""}
-                            href={item.link}
-                        >
-                            {item.name}
-                        </a>
+                        <a href={item.link}>{item.name}</a>
                     </li>
                 </>
             ))

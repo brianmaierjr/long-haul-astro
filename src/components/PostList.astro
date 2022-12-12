@@ -1,0 +1,67 @@
+---
+import { formatDate } from "../utils/helpers";
+
+const posts = await Astro.glob("../pages/blog/*.md");
+posts.sort(
+    (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+);
+---
+
+{
+    posts.map((post) => (
+        <article>
+            <time datetime={post.frontmatter.date} class="date">
+                {formatDate(post.frontmatter.date)}
+            </time>
+            <h2 class="h3">
+                <a href={post.url}>{post.frontmatter.title}</a>
+            </h2>
+            <p>{post.frontmatter.description}</p>
+        </article>
+    ))
+}
+
+<style lang="scss">
+    .post-list {
+        article {
+            margin-bottom: var(--space-xl);
+            position: relative;
+
+            &:not(:last-child):before {
+                content: "";
+                position: absolute;
+                bottom: calc(var(--space-m) * -1);
+                left: 0;
+                background: var(--subtle-color);
+                height: 0.2em;
+                width: 4rem;
+            }
+
+            h2 {
+                margin-top: 0;
+                margin-bottom: var(--space-xs);
+
+                a {
+                    text-decoration: none;
+                    font-weight: 800;
+
+                    &:hover,
+                    &:focus {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .date {
+                color: var(--text-accent-color);
+                font-family: var(--sans-serif);
+                font-weight: 300;
+                font-size: var(--step--1);
+            }
+
+            h3 {
+                margin: 0 0 var(--space-2xs);
+            }
+        }
+    }
+</style>

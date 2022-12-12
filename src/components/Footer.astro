@@ -1,42 +1,18 @@
 ---
-import { settings, social } from "../data/settings";
-import { Icon } from "astro-icon";
+import SocialMenu from "./SocialMenu.astro";
 const date = new Date();
 ---
 
 <footer class="footer">
     <div class="container">
-        <p class="copy">
-            &copy; {date.getFullYear()}
-            <a href="http://brianmaierjr.com">Brian Maier Jr.</a> Powered by
-            <a href="http://astro.build" target="_blank">Astro</a>
-        </p>
-
-        <div class="footer-links">
-            <ul class="noList social">
-                {
-                    social.map((item) => (
-                        <>
-                            <li>
-                                <a
-                                    class="social__link"
-                                    href={item.url}
-                                    target="_blank"
-                                >
-                                    <span class="sr-only">
-                                        {settings.title} on {item.name}
-                                    </span>
-                                    <Icon
-                                        class="social__icon"
-                                        name={item.icon}
-                                    />
-                                </a>
-                            </li>
-                        </>
-                    ))
-                }
-            </ul>
+        <div class="copy">
+            <p>
+                &copy; {date.getFullYear()}
+                <a href="http://brianmaierjr.com">Brian Maier Jr.</a> Powered by
+                <a href="http://astro.build" target="_blank">Astro</a>
+            </p>
         </div>
+        <SocialMenu />
     </div>
 </footer>
 
@@ -46,90 +22,26 @@ const date = new Date();
         text-align: center;
         padding: 2rem 0;
         clear: both;
+        font-size: var(--step--1);
 
         .container {
             border-top: 4px solid var(--subtle-color);
-            padding-top: var(--space-2xs);
+            padding-top: var(--space-s);
             max-width: 90%;
-        }
 
-        .copy,
-        .footer-links {
-            font-size: 0.8em;
-        }
-
-        .copy {
-            margin-bottom: var(--space-s);
-        }
-
-        &-links {
-            ul {
-                text-align: center;
-
-                li {
-                    display: inline-block;
-                    margin-right: 8px;
-
-                    &:last-child {
-                        margin-right: 0;
-                    }
-
-                    a {
-                        display: inline-block;
-                        width: 2em;
-                        height: 2em;
-                        transition: all 0.2s ease-in-out;
-                        padding: 0.5em;
-                        background-color: var(--primary-color);
-                        border-radius: 50%;
-
-                        svg {
-                            display: block;
-                            width: 100%;
-                            height: 100%;
-                            color: var(--white);
-
-                            .outer-shape {
-                                fill: var(--primary-color);
-                            }
-
-                            .inner-shape {
-                                fill: white;
-                            }
-                        }
-                    }
-
-                    &:hover,
-                    &:focus {
-                        a {
-                            text-decoration: underline;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @media (min-width: 800px) {
-        .footer {
-            .container {
+            @media (min-width: 800px) {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                // padding: 0;
                 max-width: 800px;
             }
-            .copy {
-                margin: 0;
-            }
+        }
 
-            &-links {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-            }
+        .copy p,
+        .copy p {
+            margin-bottom: var(--space-xs);
 
-            .social {
+            @media (min-width: 800px) {
                 margin-bottom: 0;
             }
         }
