@@ -2,9 +2,9 @@
 import { settings } from "../data/settings";
 
 export interface Props {
-    title?: string;
-    description?: string;
-    image?: string;
+  title?: string;
+  description?: string;
+  image?: string;
 }
 
 const title = Astro.props.title || settings.title;
@@ -14,8 +14,8 @@ const image = new URL(Astro.props.image || "images/touring.webp", Astro.site);
 
 <meta charset="utf-8" />
 <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover"
 />
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -29,13 +29,11 @@ const image = new URL(Astro.props.image || "images/touring.webp", Astro.site);
 <link rel="sitemap" href="/sitemap.xml" />
 <!-- RSS -->
 <link
-    rel="alternate"
-    type="application/rss+xml"
-    title={title}
-    href={`${settings.site}/feed/blog.xml`}
+  rel="alternate"
+  type="application/rss+xml"
+  title={title}
+  href={`${settings.site}/feed/blog.xml`}
 />
-<!-- Load Stylesheet -->
-<!-- <link rel="stylesheet" href="styles/style.scss" /> -->
 <!-- Preload Header Image -->
 <link rel="preload" as="image" href="images/touring.webp" />
 <!-- Canonical -->
@@ -56,14 +54,14 @@ const image = new URL(Astro.props.image || "images/touring.webp", Astro.site);
 <meta property="twitter:image" content={image} />
 
 <script is:inline>
-    // Dark Mode
-    if (
-        /* This condition checks whether the user has set a site preference for dark mode OR a OS-level preference for Dark Mode AND no site preference */
-        localStorage.getItem("color-mode") === "dark" ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches &&
-            !localStorage.getItem("color-mode"))
-    ) {
-        // if true, set the site to Dark Mode
-        document.documentElement.setAttribute("color-mode", "dark");
-    }
+  // Dark Mode
+  if (
+    /* This condition checks whether the user has set a site preference for dark mode OR a OS-level preference for Dark Mode AND no site preference */
+    localStorage.getItem("color-mode") === "dark" ||
+    (window.matchMedia("(prefers-color-scheme: dark)").matches &&
+      !localStorage.getItem("color-mode"))
+  ) {
+    // if true, set the site to Dark Mode
+    document.documentElement.setAttribute("color-mode", "dark");
+  }
 </script>
