@@ -56,4 +56,4 @@ Astro has [an in-depth guide](https://docs.astro.build/en/guides/deploy/) on how
 
 ## License
 
-This is [MIT](LICENSE) with no added caveats, so feel free to use this Jekyll theme on your site without linking back to me or using a disclaimer.
+This is [MIT](LICENSE) with no added caveats, so feel free to use this Astro theme on your site without linking back to me or using a disclaimer.

@@ -2,7 +2,7 @@
 export const settings = {
     site: "https://long-haul-astro.netlify.app",
     title: "Long Haul Astro",
-    description: "Long Form Jekyll theme built with Astro",
+    description: "Long Form Astro theme built with Astro",
 };
 
 // Main Menu
