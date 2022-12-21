@@ -18,16 +18,19 @@ const image = new URL(Astro.props.image || "images/touring.webp", Astro.site);
         name="viewport"
         content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
-
     <meta name="description" content={description || settings.description} />
     <meta name="generator" content={Astro.generator} />
-    <!-- settingsmap -->
+
+    <!-- Sitemap -->
     <link rel="sitemap" href="/sitemap.xml" />
+
     <!-- RSS -->
     <link
         rel="alternate"
@@ -35,11 +38,9 @@ const image = new URL(Astro.props.image || "images/touring.webp", Astro.site);
         title={title}
         href={`${settings.site}/feed/blog.xml`}
     />
+
     <!-- Preload Header Image -->
     <link rel="preload" as="image" href="images/touring.webp" />
-
-    <!-- Canonical -->
-    <!-- <link rel="canonical" href={canonicalURL} /> -->
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
