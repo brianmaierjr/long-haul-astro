@@ -8,21 +8,21 @@ import type { Props as BaseHeadProps } from "../components/BaseHead.astro";
 import "../styles/style.scss";
 
 export interface Props {
-  seo?: BaseHeadProps;
+    seo?: BaseHeadProps;
 }
 
 const { seo } = Astro.props;
 ---
 
 <html lang="en" color-mode="light">
-  <BaseHead {...seo} />
-  <body>
-    <SkipToLink />
-    <MenuMobile />
-    <Header />
-    <main id="main">
-      <slot />
-    </main>
-    <Footer />
-  </body>
+    <BaseHead {...seo} />
+    <body>
+        <SkipToLink />
+        <MenuMobile />
+        <Header />
+        <main id="main">
+            <slot />
+        </main>
+        <Footer />
+    </body>
 </html>
