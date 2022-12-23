@@ -71,11 +71,10 @@ dt {
 }
 
 dd {
-    margin: 0 0 var(--space-m);
+    margin-bottom: var(--space-m);
 }
 
 blockquote {
-    margin: var(--space-xl) 0;
     padding: var(--space-s) 0;
     line-height: 1.8;
     position: relative;
@@ -87,7 +86,7 @@ blockquote {
         width: 7rem;
         height: 0.3rem;
         display: block;
-        background: var(--subtle-color);
+        background: var(--primary-color);
     }
 
     &:before {

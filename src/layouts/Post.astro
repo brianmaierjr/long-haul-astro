@@ -13,7 +13,7 @@ const seo = {
 ---
 
 <Layout seo={seo}>
-    <article class="post">
+    <article class="content-grid">
         {
             frontmatter.image && (
                 <div class="featured-image">
@@ -31,79 +31,6 @@ const seo = {
             </p>
         </header>
 
-        <div class="flow-content">
-            <slot />
-        </div>
+        <slot />
     </article>
 </Layout>
-
-<style lang="scss">
-    .post {
-        .postTitle {
-            margin: var(--space-s) auto var(--space-xs);
-            text-align: center;
-            font-weight: 900;
-        }
-
-        header,
-        img {
-            margin-bottom: var(--space-xl);
-        }
-
-        figure {
-            margin: var(--space-xl) 0;
-
-            figcaption {
-                text-align: center;
-                font-size: var(--step--1);
-                font-style: italic;
-                color: var(--text-accent-color);
-            }
-
-            img {
-                margin: 0 auto var((--space-2xs));
-                display: block;
-            }
-        }
-
-        .dropcap {
-            color: var(--primary-color);
-            margin-right: var(--space-2xs);
-            float: left;
-            font-size: 5em;
-            margin: 0 var(--space-xs) 0 0;
-            line-height: 0.85;
-        }
-
-        .featured-image {
-            position: relative;
-            margin-top: var(--space-2xs);
-            clip-path: polygon(0 var(--space-s), 100% 0, 100% 100%, 0 100%);
-            text-align: center;
-            margin-bottom: var(--space-l);
-
-            @media (min-width: 800px) {
-                clip-path: polygon(
-                    0 var(--space-2xl),
-                    100% 0,
-                    100% 100%,
-                    0 100%
-                );
-            }
-
-            img {
-                width: 100%;
-                max-width: 1000px;
-                margin-inline: auto;
-                margin-bottom: 0;
-            }
-        }
-
-        .postMeta {
-            text-align: center;
-            color: lighten(black, 50%);
-            font-family: var(--sans-serif);
-            font-weight: 300;
-        }
-    }
-</style>

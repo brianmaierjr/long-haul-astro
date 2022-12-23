@@ -22,21 +22,23 @@ html {
 
 body {
     font-family: var(--serif);
+    font-size: var(--step-0);
     line-height: 1.6;
     color: var(--text-color);
     overflow-x: hidden;
     margin: 0;
     background-color: var(--surface1);
-    font-size: var(--step-0);
 
     &.modal-is-active {
         overflow: hidden;
     }
 
-    p,
-    ul {
-        margin: 0 0 var(--space-l);
-    }
+    // p,
+    // ul,
+    // ol,
+    // dl {
+    //     margin: 0 0 var(--space-l);
+    // }
 }
 
 // Screen Reader Text
@@ -99,7 +101,7 @@ PRE STYLING
 
 pre {
     padding: var(--space-l);
-    margin: 0 0 var(--space-xl) 0;
+    --flow-gap: 2.5em;
     font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
         monospace;
 }
@@ -123,7 +125,8 @@ a {
 
     &:hover,
     &:focus {
-        text-decoration: none;
+        text-decoration-style: wavy;
+        color: var(--link-accent-color);
     }
 }
 

@@ -19,6 +19,7 @@ COLOR VARIABLES
         --bad-color: #ff4136;
         --subtle-color: rgb(228, 228, 228);
         --link-color: #2b8251;
+        --link-accent-color: #1d653c;
     }
 
     &[color-mode="dark"] {
@@ -29,6 +30,7 @@ COLOR VARIABLES
         --bad-color: #ff4136;
         --subtle-color: rgb(41, 41, 41);
         --link-color: #33995f;
+        --link-accent-color: #3fad6e;
     }
 }
 

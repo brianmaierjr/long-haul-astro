@@ -83,7 +83,7 @@ import SocialMenu from "./SocialMenu.astro";
     <div class="nav-header">
         <h2 class="header__title">{settings.title}</h2>
         <div class="modal__close">
-            <button class="toggle-menu toggle__btn">
+            <button class="toggle__btn">
                 <span class="sr-only">Close Mobile Navigation Menu</span>
                 <Icon name="ic:baseline-close" class="color-white" />
             </button>
@@ -157,6 +157,7 @@ import SocialMenu from "./SocialMenu.astro";
 
             &:focus {
                 padding-left: 0.5em;
+                color: var(--white);
             }
         }
     }
