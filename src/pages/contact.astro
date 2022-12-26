@@ -12,7 +12,7 @@ const seo = {
         <h1 class="page-title">Contact Me</h1>
         <div id="contact">
             <div class="flex">
-                <div>
+                <div class="flow">
                     <p class="intro">
                         This is an example Contact page. If you want to make
                         changes then do so in the <code>contact.astro</code> file.
@@ -38,25 +38,25 @@ const seo = {
                         type="text"
                         id="name"
                         name="name"
-                        class="full-width"
+                        class="width-full"
                         required
-                    /><br />
+                    />
                     <label for="email">Email Address</label>
                     <input
                         type="email"
                         id="email"
                         name="_replyto"
-                        class="full-width"
+                        class="width-full"
                         required
-                    /><br />
+                    />
                     <label for="message">Message</label>
                     <textarea
                         name="message"
                         id="message"
                         cols="30"
-                        rows="10"
-                        class="full-width"
-                        required></textarea><br />
+                        rows="5"
+                        class="width-full"
+                        required></textarea>
                     <input type="submit" value="Send" class="button" />
                 </form>
             </div>

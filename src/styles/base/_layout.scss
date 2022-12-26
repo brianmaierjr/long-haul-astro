@@ -1,0 +1,58 @@
+/***************
+CONTENT GRID STYLING
+***************/
+
+// Grid for Content Area
+.content-grid {
+    padding-inline: var(--space-m);
+
+    @media (min-width: 800px) {
+        display: grid;
+        max-width: 1200px;
+        grid-template-columns:
+            1fr
+            minmax(50%, 800px)
+            1fr;
+        width: 100%;
+        margin-inline: auto;
+
+        > * {
+            grid-column: 2;
+        }
+
+        > *:where(blockquote, img, picture, figure, video, pre, .featured-image),
+        .content--fullWidth {
+            grid-column: 1 / -1;
+        }
+    }
+}
+
+// Layout
+.container {
+    max-width: min(calc(100% - var(--space-l)), 45rem);
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: 800px) {
+        padding: 0;
+    }
+
+    &--lg {
+        max-width: min(calc(100% - var(--space-l)), 70rem);
+    }
+}
+
+// Flexbox
+.flex {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+
+    @media (min-width: 800px) {
+        flex-direction: row;
+        gap: var(--space-l);
+        > * {
+            flex: 1;
+        }
+    }
+}

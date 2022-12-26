@@ -4,8 +4,9 @@ FORM STYLING
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: var(--space-3xs);
 }
+
 input,
 textarea {
     background: var(--subtle-color);
@@ -16,27 +17,23 @@ textarea {
     height: auto;
     padding: var(--space-2xs);
     width: 300px;
-    margin-bottom: var(--space-xs);
 
     &:focus {
         border: 1px solid var(--primary-color);
     }
+}
 
-    &.full-width {
-        width: 100%;
-    }
+textarea {
+    // min-height: 6em;
 }
 
 input[type="submit"] {
     width: auto;
     display: flex;
     margin-left: auto;
+    margin-top: var(--space-s);
 }
 
-textarea {
-    height: 8em;
-}
-
-form {
-    margin-bottom: var(--space-xl);
+*:where(input, textarea) + label {
+    margin-top: var(--space-s);
 }

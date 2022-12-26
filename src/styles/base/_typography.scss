@@ -14,10 +14,10 @@ h5,
 .h5,
 h6,
 .h6 {
-    margin: var(--space-2xs) 0 var(--space-m);
     font-family: var(--sans-serif);
-    line-height: 1.2;
+    line-height: var(--line-height-heading);
     font-weight: 800;
+    margin: 0;
 }
 
 // Headings
@@ -62,10 +62,7 @@ blockquote {
     line-height: 1.7;
 }
 
-/***************
-LIST STYLING
-***************/
-
+// Definition Lists
 dt {
     font-weight: bold;
 }
@@ -74,8 +71,11 @@ dd {
     margin-bottom: var(--space-m);
 }
 
+// Blockquote Styling
 blockquote {
-    padding: var(--space-s) 0;
+    --flow-gap: var(--space-2xl);
+    padding: var(--space-l) 0;
+    margin: var(--space-2xl) 0;
     line-height: 1.8;
     position: relative;
 
@@ -90,12 +90,12 @@ blockquote {
     }
 
     &:before {
-        top: calc(var(--space-s) * -1);
+        top: 0;
         left: calc(50% - 75px);
     }
 
     &:after {
-        bottom: calc(var(--space-s) * -1);
+        bottom: 0;
         left: calc(50% - 75px);
     }
 }

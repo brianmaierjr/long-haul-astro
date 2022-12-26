@@ -1,8 +1,8 @@
 ---
-import { menu } from "../data/settings";
 import { settings } from "../data/settings";
 import { Icon } from "astro-icon";
 import SocialMenu from "./SocialMenu.astro";
+import MenuMain from "./MenuMain.astro";
 ---
 
 <script type="module">
@@ -75,7 +75,7 @@ import SocialMenu from "./SocialMenu.astro";
 </script>
 
 <nav
-    class="modal mobile-nav"
+    class="modal mobile-nav flow"
     role="dialog"
     aria-modal="true"
     aria-labelledby="mobile-menu-trigger"
@@ -85,22 +85,12 @@ import SocialMenu from "./SocialMenu.astro";
         <div class="modal__close">
             <button class="toggle__btn">
                 <span class="sr-only">Close Mobile Navigation Menu</span>
-                <Icon name="ic:baseline-close" class="color-white" />
+                <Icon name="ic:baseline-close" />
             </button>
         </div>
     </div>
 
-    <ul class="no-list">
-        {
-            menu.map((item) => (
-                <>
-                    <li>
-                        <a href={item.link}>{item.name}</a>
-                    </li>
-                </>
-            ))
-        }
-    </ul>
+    <MenuMain mobile />
     <SocialMenu />
 </nav>
 
@@ -114,9 +104,10 @@ import SocialMenu from "./SocialMenu.astro";
         z-index: -10;
         top: 0;
         left: 0;
-        background-color: var(--primary-color);
+        background-color: var(--surface1);
         padding: var(--space-m);
         overflow: auto;
+        color: var(--text-color);
 
         &.show {
             width: 100vw;
@@ -125,40 +116,8 @@ import SocialMenu from "./SocialMenu.astro";
             visibility: visible;
         }
 
-        h2 {
-            color: var(--white);
-        }
-        a {
-            color: var(--white);
-            padding: var(--space-2xs) 0;
-            display: flex;
-            text-decoration: none;
-        }
-
         .mobile-nav-heading {
             margin: 0;
-        }
-    }
-
-    li {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
-        &:first-of-type {
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        &:focus-within {
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-
-        a {
-            font-family: var(--sans-serif);
-            font-weight: 300;
-
-            &:focus {
-                padding-left: 0.5em;
-                color: var(--white);
-            }
         }
     }
 
@@ -180,7 +139,7 @@ import SocialMenu from "./SocialMenu.astro";
         width: 3rem;
         padding: var(--space-2xs);
         gap: var(--space-3xs);
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: var(--subtle-color);
         font-size: var(--step--2);
 
         svg {
@@ -192,9 +151,5 @@ import SocialMenu from "./SocialMenu.astro";
                 fill: var(--white);
             }
         }
-    }
-
-    .social {
-        text-align: left;
     }
 </style>

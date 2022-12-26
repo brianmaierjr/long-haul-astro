@@ -15,18 +15,12 @@ BUTTON DEFAULTS
     padding: var(--space-2xs) var(--space-m);
     border: 0;
     border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: var(--space-2xs);
     transition: background-color 0.14s ease-in-out;
 
-    // hovering on the btn
+    // hovering and focusing on the button
     &:hover,
     &:focus {
-        text-decoration: underline;
-    }
-
-    // clicking on the button
-    &:active {
-        top: 1px; // adds a tiny hop to the click
+        background-color: var(--primary-color-shade);
+        outline-color: var(--text-color);
     }
 }

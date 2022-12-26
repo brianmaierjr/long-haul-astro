@@ -1,15 +1,19 @@
 ---
 import { settings } from "../data/settings";
+import "../styles/style.scss";
 
 export interface Props {
     title?: string;
     description?: string;
     image?: string;
+    canonicalURL?: URL | string;
 }
 
 const title = Astro.props.title || settings.title;
 const description = Astro.props.description || settings.description;
 const image = new URL(Astro.props.image || "images/touring.webp", Astro.site);
+const canonicalURL =
+    Astro.props.canonicalURL || new URL(Astro.url.pathname, Astro.site);
 ---
 
 <head>
@@ -39,19 +43,22 @@ const image = new URL(Astro.props.image || "images/touring.webp", Astro.site);
         href={`${settings.site}/feed/blog.xml`}
     />
 
+    <!-- Canonical -->
+    <link rel="canonical" href={canonicalURL} />
+
     <!-- Preload Header Image -->
     <link rel="preload" as="image" href="images/touring.webp" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <!-- <meta property="og:url" content={canonicalURL} /> -->
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <!-- <meta property="twitter:url" content={canonicalURL} /> -->
+    <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />

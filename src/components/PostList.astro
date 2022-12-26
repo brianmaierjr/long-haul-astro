@@ -7,19 +7,21 @@ posts.sort(
 );
 ---
 
-{
-    posts.map((post) => (
-        <article>
-            <time datetime={post.frontmatter.date} class="post-date">
-                {formatDate(post.frontmatter.date)}
-            </time>
-            <h3 class="post-title">
-                <a href={post.url}>{post.frontmatter.title}</a>
-            </h3>
-            <p class="post-description">{post.frontmatter.description}</p>
-        </article>
-    ))
-}
+<div class="post-list no-list">
+    {
+        posts.map((post) => (
+            <article>
+                <time datetime={post.frontmatter.date} class="post-date">
+                    {formatDate(post.frontmatter.date)}
+                </time>
+                <h3 class="post-title">
+                    <a href={post.url}>{post.frontmatter.title}</a>
+                </h3>
+                <p class="post-description">{post.frontmatter.description}</p>
+            </article>
+        ))
+    }
+</div>
 
 <style lang="scss">
     article {

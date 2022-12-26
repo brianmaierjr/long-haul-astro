@@ -14,7 +14,7 @@ html {
 }
 
 *:focus {
-    outline-color: currentColor;
+    outline-color: var(--text-color);
     outline-offset: 2px;
     outline-width: 2px;
     outline-style: dashed;
@@ -23,35 +23,14 @@ html {
 body {
     font-family: var(--serif);
     font-size: var(--step-0);
-    line-height: 1.6;
+    line-height: var(--line-height-body);
     color: var(--text-color);
     overflow-x: hidden;
-    margin: 0;
     background-color: var(--surface1);
 
     &.modal-is-active {
         overflow: hidden;
     }
-
-    // p,
-    // ul,
-    // ol,
-    // dl {
-    //     margin: 0 0 var(--space-l);
-    // }
-}
-
-// Screen Reader Text
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
 }
 
 // Text Selection Styling
@@ -80,25 +59,7 @@ hr {
     border-color: var(--subtle-color);
 }
 
-// Layout
-.container {
-    max-width: min(calc(100% - var(--space-l)), 45rem);
-    margin-left: auto;
-    margin-right: auto;
-
-    @media (min-width: 800px) {
-        padding: 0;
-    }
-
-    &--lg {
-        max-width: min(calc(100% - var(--space-l)), 70rem);
-    }
-}
-
-/***************
-PRE STYLING
-***************/
-
+// Preformatted Text Styling
 pre {
     padding: var(--space-l);
     --flow-gap: 2.5em;
@@ -106,20 +67,14 @@ pre {
         monospace;
 }
 
-/***************
-PAGE STYLES
-***************/
-
+// Page Styling
 .page-title {
     margin: var(--space-s) auto var(--space-xl);
     text-align: center;
     font-weight: 900;
 }
 
-/***************
-LINK STYLING
-***************/
-
+// Link Styling
 a {
     color: var(--link-color);
 
@@ -127,30 +82,5 @@ a {
     &:focus {
         text-decoration-style: wavy;
         color: var(--link-accent-color);
-    }
-}
-
-/***************
-MISC UTILITY STYLES
-***************/
-
-.color-white {
-    color: var(--white);
-}
-
-.no-list {
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
-}
-
-.flex {
-    @media (min-width: 800px) {
-        display: flex;
-        gap: var(--space-l);
-
-        > * {
-            flex: 1;
-        }
     }
 }

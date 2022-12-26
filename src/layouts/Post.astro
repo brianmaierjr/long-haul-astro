@@ -13,7 +13,7 @@ const seo = {
 ---
 
 <Layout seo={seo}>
-    <article class="content-grid">
+    <article class="content-grid flow">
         {
             frontmatter.image && (
                 <div class="featured-image">
@@ -22,15 +22,53 @@ const seo = {
             )
         }
 
-        <header class="container">
-            <h1 class="postTitle">{frontmatter.title}</h1>
-            <p class="postMeta">
-                <time datetime={frontmatter.date} class="date">
+        <header class="post-header">
+            <h1 class="post-header__title">{frontmatter.title}</h1>
+            <p class="post-header__meta">
+                <time datetime={frontmatter.date} class="post-header__date">
                     {formatDate(frontmatter.date)}
                 </time>
             </p>
         </header>
-
         <slot />
     </article>
 </Layout>
+
+<style lang="scss">
+    .featured-image {
+        grid-column: 1 / -1;
+        position: relative;
+        margin-top: var(--space-2xs);
+        clip-path: polygon(0 var(--space-s), 100% 0, 100% 100%, 0 100%);
+        text-align: center;
+        margin-bottom: var(--space-l);
+
+        @media (min-width: 800px) {
+            clip-path: polygon(0 var(--space-2xl), 100% 0, 100% 100%, 0 100%);
+        }
+
+        img {
+            width: 100%;
+            max-width: 1000px;
+            margin-inline: auto;
+            margin-bottom: 0;
+        }
+    }
+
+    .post-header__title {
+        margin: var(--space-s) auto var(--space-2xs);
+        text-align: center;
+        font-weight: 900;
+    }
+
+    .post-header__meta {
+        text-align: center;
+        color: lighten(black, 50%);
+        font-family: var(--sans-serif);
+        font-weight: 300;
+    }
+
+    .post-header {
+        margin-bottom: var(--space-m);
+    }
+</style>

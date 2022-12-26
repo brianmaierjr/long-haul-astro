@@ -5,7 +5,6 @@ import Footer from "../components/Footer.astro";
 import SkipToLink from "../components/SkipToLink.astro";
 import MenuMobile from "../components/MenuMobile.astro";
 import type { Props as BaseHeadProps } from "../components/BaseHead.astro";
-import "../styles/style.scss";
 
 export interface Props {
     seo?: BaseHeadProps;
@@ -18,11 +17,11 @@ const { seo } = Astro.props;
     <BaseHead {...seo} />
     <body>
         <SkipToLink />
-        <MenuMobile />
         <Header />
         <main id="main">
             <slot />
         </main>
         <Footer />
+        <MenuMobile />
     </body>
 </html>

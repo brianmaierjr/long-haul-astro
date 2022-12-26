@@ -232,6 +232,8 @@ In JavaScript, use `console.log()` to print to the console.
 
 ## Images
 
+Images will be in the smaller content container unless you use HTML and place them in a `figure` or `picture` container.
+
 ![My Alt Text][id]
 
 [id]: /images/touring.webp "My Optional Title Text"
@@ -240,6 +242,16 @@ In JavaScript, use `console.log()` to print to the console.
 ![My Alt Text][id]
 
 [id]: /images/touring.webp "My Optional Title Text"
+```
+
+<figure>
+    <img src="/images/touring.webp" alt="My Optional Title Text" />
+</figure>
+
+```markdown
+<figure>
+    <img src="/images/touring.webp" alt="My Optional Title Text" />
+</figure>
 ```
 
 ## Escaping

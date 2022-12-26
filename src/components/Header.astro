@@ -1,6 +1,8 @@
 ---
 import { settings } from "../data/settings";
 import MenuMain from "./MenuMain.astro";
+import ToggleColorModeButton from "./ToggleColorModeButton.astro";
+import ToggleMenuButton from "./ToggleMenuButton.astro";
 ---
 
 <header class="header">
@@ -20,7 +22,12 @@ import MenuMain from "./MenuMain.astro";
                 </p>
             )
         }
-        <MenuMain />
+
+        <nav>
+            <MenuMain />
+            <ToggleColorModeButton />
+            <ToggleMenuButton icon="ic:baseline-menu" />
+        </nav>
     </div>
 </header>
 
@@ -53,9 +60,15 @@ import MenuMain from "./MenuMain.astro";
                 0 100%
             );
         }
+
+        nav {
+            .no-list {
+                display: none;
+            }
+        }
     }
 
-    :global(.header__title) {
+    .header__title {
         margin: 0;
         font-size: var(--step-0);
         font-family: var(--sans-serif);
@@ -80,6 +93,21 @@ import MenuMain from "./MenuMain.astro";
                 text-decoration: underline;
                 color: var(--white);
             }
+
+            &:focus {
+                outline-color: currentColor;
+            }
+        }
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-3xs);
+
+        @media (min-width: 800px) {
+            gap: var(--space-xs);
         }
     }
 

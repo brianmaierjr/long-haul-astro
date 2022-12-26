@@ -8,7 +8,8 @@ COLOR VARIABLES
     --grey: rgb(228, 228, 228);
     --black: #111;
     --bad-color: #ff4136;
-    --primary-color: #2a7e4f;
+    --primary-color: #2d8653;
+    --primary-color-shade: #21633e;
     --link-color: var(--primary-color);
     --link-hover: #246b43;
 
@@ -18,19 +19,16 @@ COLOR VARIABLES
         --text-accent-color: #393939;
         --bad-color: #ff4136;
         --subtle-color: rgb(228, 228, 228);
-        --link-color: #2b8251;
-        --link-accent-color: #1d653c;
+        --link-accent-color: #21633e;
     }
 
     &[color-mode="dark"] {
         --surface1: var(--black);
         --text-color: var(--white);
         --text-accent-color: #bbbbbb;
-        --primary-color: seagreen;
         --bad-color: #ff4136;
         --subtle-color: rgb(41, 41, 41);
-        --link-color: #33995f;
-        --link-accent-color: #3fad6e;
+        --link-accent-color: #39ac6b;
     }
 }
 
@@ -46,6 +44,8 @@ Use system fonts via https://systemfontstack.com/
     --serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
         Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
         Segoe UI Emoji, Segoe UI Symbol;
+    --line-height-body: 1.6;
+    --line-height-heading: 1.2;
 }
 
 // Fluid Type

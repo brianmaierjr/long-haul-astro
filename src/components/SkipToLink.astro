@@ -12,14 +12,16 @@
         height: 1px;
         overflow: hidden;
         @extend .button;
-    }
 
-    .skip-to-content-link:focus {
-        left: 1em;
-        top: 1em;
-        width: auto;
-        height: auto;
-        z-index: 10;
-        text-decoration: none;
+        &:focus {
+            left: 1em;
+            top: 1em;
+            width: auto;
+            height: auto;
+            z-index: 10;
+            text-decoration: none;
+            outline-color: var(--white);
+            color: var(--white);
+        }
     }
 </style>
