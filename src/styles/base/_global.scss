@@ -27,6 +27,7 @@ body {
     color: var(--text-color);
     overflow-x: hidden;
     background-color: var(--surface1);
+    -webkit-font-smoothing: antialiased;
 
     &.modal-is-active {
         overflow: hidden;
