@@ -9,19 +9,19 @@ Long Haul is a minimal, long form, theme for Astro. I originally built this them
 ## Features
 
 -   ✅ Built with Astro, duh
--   ✅ Automatic Sitemap
--   ✅ A modern CSS reset by [Andy Bell](https://piccalil.li/blog/a-modern-css-reset/)
+-   ✅ Automatic [Sitemap](/sitemap-index.xml) with [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
+-   ✅ A modern CSS reset
 -   ✅ Generated Robots.txt via [astro-robots-txt](https://github.com/alextim/astro-lib/tree/main/packages/astro-robots-txt#readme)
--   ✅ XML Feed for RSS Readers
+-   ✅ [XML Feed](rss.xml) for RSS Readers
 -   ✅ Featured Post Images
--   ✅ Dark/Light Mode Toggle
+-   ✅ Color Mode Toggle
 -   ✅ Icons Provided by [Astro Icons](https://www.astroicon.dev/)
 -   ✅ Fluid Type and Space Scale from [UTOPIA](https://utopia.fyi)
 -   ✅ Compression via [Astro Compress](https://github.com/astro-community/astro-compress)
 -   ✅ Skip To Main Content Link
 -   ✅ Accessible Focus Styling
 -   ✅ Accessible Mobile Menu
--   ✅ Lightning Fast ⚡ lightLighthouse Score
+-   ✅ ⚡ Perfect Lighthouse Score
 
 ## Get Started
 
