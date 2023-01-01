@@ -31,7 +31,7 @@ npm install
 
 ### Modify Settings
 
-The main settings can be found inside the `src/data/settings.ts` file. In this file you will find settings for the site title, description and url. You will also find the navigation menus in the header and footer here.
+The main settings can be found inside the `src/data/settings.ts` file. In this file you can edit the site title, description, and url. You will also find the navigation menus in the header and footer here.
 
 ## Commands
 

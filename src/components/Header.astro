@@ -6,114 +6,119 @@ import ToggleMenuButton from "./ToggleMenuButton.astro";
 ---
 
 <header class="header">
-  <div class="container">
-    {
-      // H1 on homepage, P on other pages
-      Astro.url.pathname == "/" && (
-        <h1 class="header__title">
-          <a href="/">{settings.title}</a>
-        </h1>
-      )
-    }
-    {
-      Astro.url.pathname != "/" && (
-        <p class="header__title">
-          <a href="/">{settings.title}</a>
-        </p>
-      )
-    }
+    <div class="container">
+        {
+            // H1 on homepage, P on other pages
+            Astro.url.pathname == "/" && (
+                <h1 class="header__title">
+                    <a href="/">{settings.title}</a>
+                </h1>
+            )
+        }
+        {
+            Astro.url.pathname != "/" && (
+                <p class="header__title">
+                    <a href="/">{settings.title}</a>
+                </p>
+            )
+        }
 
-    <nav>
-      <MenuMain />
-      <ToggleColorModeButton />
-      <ToggleMenuButton icon="ic:baseline-menu" />
-    </nav>
-  </div>
+        <nav>
+            <MenuMain />
+            <ToggleColorModeButton />
+            <ToggleMenuButton icon="ic:baseline-menu" />
+        </nav>
+    </div>
 </header>
 
 <style lang="scss">
-  @use "../styles/base/_config.scss" as *;
+    @use "../styles/base/_config.scss" as *;
 
-  .header {
-    background-color: var(--primary-color);
-    background-image: url("/images/touring.webp");
-    background-size: cover;
-    background-position: center center;
-    color: white;
-    padding-top: var(--space-m);
-    padding-bottom: var(--space-l);
-    margin-bottom: var(--space-l);
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--space-s)), 0 100%);
+    .header {
+        background-color: var(--primary-color);
+        background-image: url("/images/touring.webp");
+        background-size: cover;
+        background-position: center center;
+        color: white;
+        padding-top: var(--space-m);
+        padding-bottom: var(--space-l);
+        margin-bottom: var(--space-l);
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - var(--space-s)),
+            0 100%
+        );
 
-    @media (min-width: 800px) {
-      position: relative;
-      padding-block: var(--space-3xl);
-      clip-path: polygon(
-        0 0,
-        100% 0,
-        100% calc(100% - var(--space-2xl)),
-        0 100%
-      );
+        @media (min-width: 800px) {
+            position: relative;
+            padding-block: var(--space-3xl);
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% calc(100% - var(--space-2xl)),
+                0 100%
+            );
+        }
+
+        nav {
+            .no-list {
+                display: none;
+            }
+        }
+    }
+
+    :global(.header__title) {
+        margin: 0;
+        font-size: var(--step-0);
+        font-family: var(--sans-serif);
+        font-weight: 900;
+        text-transform: uppercase;
+
+        @media (min-width: 800px) {
+            font-size: var(--step-5);
+            padding-bottom: var(--space-xs);
+            line-height: 1;
+            letter-spacing: -1.5px;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+                color: var(--white);
+            }
+
+            &:focus {
+                outline-color: currentColor;
+            }
+        }
     }
 
     nav {
-      .no-list {
-        display: none;
-      }
-    }
-  }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-3xs);
 
-  :global(.header__title) {
-    margin: 0;
-    font-size: var(--step-0);
-    font-family: var(--sans-serif);
-    font-weight: 900;
-    text-transform: uppercase;
-
-    @media (min-width: 800px) {
-      font-size: var(--step-5);
-      padding-bottom: var(--space-xs);
-      line-height: 1;
-      letter-spacing: -1.5px;
-      padding-left: 0;
-      margin: 0;
+        @media (min-width: 800px) {
+            gap: var(--space-xs);
+        }
     }
 
-    a {
-      color: white;
-      text-decoration: none;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-        color: var(--white);
-      }
-
-      &:focus {
-        outline-color: currentColor;
-      }
+        @media (min-width: 800px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
-  }
-
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-3xs);
-
-    @media (min-width: 800px) {
-      gap: var(--space-xs);
-    }
-  }
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    @media (min-width: 800px) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
 </style>

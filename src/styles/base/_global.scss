@@ -2,17 +2,6 @@
 GLOBAL STYLES
 ***************/
 
-html {
-    box-sizing: border-box;
-    font-size: 100%;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-
 *:focus {
     outline-color: var(--text-color);
     outline-offset: 2px;
@@ -55,24 +44,10 @@ object {
     height: auto;
 }
 
+// Horizontal Rule
 hr {
     width: 100%;
     border-color: var(--subtle-color);
-}
-
-// Preformatted Text Styling
-pre {
-    padding: var(--space-l);
-    --flow-gap: 2.5em;
-    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
-        monospace;
-}
-
-// Page Styling
-.page-title {
-    margin: var(--space-s) auto var(--space-xl);
-    text-align: center;
-    font-weight: 900;
 }
 
 // Link Styling
@@ -84,4 +59,11 @@ a {
         text-decoration-style: wavy;
         color: var(--link-accent-color);
     }
+}
+
+// Page Styling
+.page-title {
+    margin: var(--space-s) auto var(--space-xl);
+    text-align: center;
+    font-weight: 900;
 }

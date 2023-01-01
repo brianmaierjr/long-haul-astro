@@ -7,6 +7,11 @@ UTILITY STYLES
     color: var(--white);
 }
 
+// Width
+.width-full {
+    width: 100%;
+}
+
 // Remove List Styling
 .no-list {
     list-style: none;
@@ -57,6 +62,7 @@ UTILITY STYLES
     }
 }
 
+// Dropcap
 .dropcap {
     color: var(--primary-color);
     margin-right: var(--space-2xs);
@@ -64,9 +70,4 @@ UTILITY STYLES
     font-size: 5em;
     margin: 0 var(--space-xs) 0 0;
     line-height: 0.85;
-}
-
-// Width
-.width-full {
-    width: 100%;
 }

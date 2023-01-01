@@ -13,7 +13,7 @@ const seo = {
 ---
 
 <Layout seo={seo}>
-    <article class="content-grid flow">
+    <article>
         {
             frontmatter.image && (
                 <div class="featured-image">
@@ -21,16 +21,17 @@ const seo = {
                 </div>
             )
         }
-
-        <header class="post-header">
-            <h1 class="post-header__title">{frontmatter.title}</h1>
-            <p class="post-header__meta">
-                <time datetime={frontmatter.date} class="post-header__date">
-                    {formatDate(frontmatter.date)}
-                </time>
-            </p>
-        </header>
-        <slot />
+        <div class="content-grid flow">
+            <header class="post-header">
+                <h1 class="post-header__title">{frontmatter.title}</h1>
+                <p class="post-header__meta">
+                    <time datetime={frontmatter.date} class="post-header__date">
+                        {formatDate(frontmatter.date)}
+                    </time>
+                </p>
+            </header>
+            <slot />
+        </div>
     </article>
 </Layout>
 

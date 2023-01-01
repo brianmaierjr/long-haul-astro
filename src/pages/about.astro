@@ -9,8 +9,10 @@ const seo = {
 
 <Layout seo={seo}>
     <div>
-        <div class="content-grid flow">
+        <div class="container container--lg">
             <h1 class="page-title">About Long Haul</h1>
+        </div>
+        <div class="content-grid flow">
             <img src="../images/touring.webp" alt="" />
             <p class="intro">
                 Long Haul is a minimal, long form <a
@@ -27,15 +29,15 @@ const seo = {
             <h2>Features</h2>
             <ul>
                 <li>Built with Astro, duh</li>
-                <li>Automatic Sitemap</li>
                 <li>
-                    A modern CSS reset by <a
-                        href="https://piccalil.li/blog/a-modern-css-reset/"
-                        target="_blank">Andy Bell</a
+                    Automatic <a href="/sitemap-index.xml">Sitemap</a> with <a
+                        href="https://docs.astro.build/en/guides/integrations-guide/sitemap/"
+                        target="_blank">@astrojs/sitemap</a
                     >
                 </li>
+                <li>A modern CSS reset</li>
                 <li>Robots.txt</li>
-                <li>XML Feed for RSS Readers</li>
+                <li><a href="/rss.xml">XML Feed</a> for RSS Readers</li>
                 <li>Featured Post Images</li>
                 <li>Color Mode Toggle</li>
                 <li>

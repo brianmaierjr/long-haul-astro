@@ -1,5 +1,5 @@
 ---
-title: Test Post
+title: A Test Post With A Much Longer Heading
 layout: ../../layouts/Post.astro
 description: Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
 date: 2022-11-10
