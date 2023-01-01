@@ -3,29 +3,23 @@ import { Icon } from "astro-icon";
 ---
 
 <!--- Light mode button --->
-<button
-    class="color-mode__btn toggle__btn light--hidden"
-    aria-label="Toggle light mode"
->
-    <Icon name="ph:sun" class="color-white" /><span class="sr-only">Light</span>
-</button>
-
-<!--- Dark mode button --->
-<button
-    class="color-mode__btn toggle__btn dark--hidden"
-    aria-label="Toggle dark mode"
->
-    <Icon name="ph:moon" class="color-white" /><span class="sr-only">Dark</span>
+<button class="color-mode__btn toggle__btn" aria-label="Toggle light mode">
+    <Icon name="ph:moon" class="color-white dark-mode" /><span class="sr-only"
+        >Dark</span
+    >
+    <Icon name="ph:sun" class="color-white light-mode" /><span class="sr-only"
+        >Light</span
+    >
 </button>
 
 <style lang="scss">
     :root[color-mode="light"] {
-        .light--hidden {
+        .light-mode {
             display: none;
         }
     }
     :root[color-mode="dark"] {
-        .dark--hidden {
+        .dark-mode {
             display: none;
         }
     }
@@ -63,25 +57,27 @@ import { Icon } from "astro-icon";
     if (window.CSS && CSS.supports("color", "var(--primary)")) {
         var toggleColorMode = function toggleColorMode(e) {
             // Switch to Light Mode
-            if (e.currentTarget.classList.contains("light--hidden")) {
+            if (
+                document.documentElement.getAttribute("color-mode") === "dark"
+            ) {
                 // Sets the custom html attribute
                 document.documentElement.setAttribute("color-mode", "light"); // Sets the user's preference in local storage
-
                 localStorage.setItem("color-mode", "light");
+                document.querySelector(".light-mode").style.display = "none";
+                document.querySelector(".dark-mode").style.display = "block";
                 return;
+            } else {
+                /* Switch to Dark Mode */
+                document.documentElement.setAttribute("color-mode", "dark"); // Sets the user's preference in local storage
+                localStorage.setItem("color-mode", "dark");
+                document.querySelector(".dark-mode").style.display = "none";
+                document.querySelector(".light-mode").style.display = "block";
             }
-            /* Switch to Dark Mode
-    Sets the custom html attribute */
-            document.documentElement.setAttribute("color-mode", "dark"); // Sets the user's preference in local storage
+        };
 
-            localStorage.setItem("color-mode", "dark");
-        }; // Get the buttons in the DOM
-
-        var toggleColorButtons = document.querySelectorAll(".color-mode__btn"); // Set up event listeners
-
-        toggleColorButtons.forEach(function (btn) {
-            btn.addEventListener("click", toggleColorMode);
-        });
+        // Get the button in the DOM
+        var toggleColorButton = document.querySelector(".color-mode__btn");
+        toggleColorButton.addEventListener("click", toggleColorMode);
     } else {
         // If the feature isn't supported, then we hide the toggle buttons
         var btnContainer = document.querySelector(".color-mode__header");

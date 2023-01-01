@@ -4,6 +4,8 @@
 
 Long Haul is a minimal, long form, theme for Astro. I originally built this theme for Jekyll about 8 years ago(geez I'm old). Somehow that theme has almost 700 forks and almost 600 stars [on GitHub](https://github.com/brianmaierjr/long-haul) so I figured I'd bring it into the future with Astro 🚀.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1f6f43d4-fbc7-4877-bf95-0f48a30bd04d/deploy-status)](https://app.netlify.com/sites/long-haul-astro/deploys)
+
 ## Features
 
 -   ✅ Built with Astro, duh
@@ -31,7 +33,7 @@ npm install
 
 ### Modify Settings
 
-The main settings can be found inside the `src/data/settings.ts` file. In this file you can edit the site title, description, and url. You will also find the navigation menus in the header and footer here.
+The main settings can be found inside the `src/data/settings.ts` file. In this file you can edit the site title, description and url. You will also find the navigation menus in the header and footer here.
 
 ## Commands
 
