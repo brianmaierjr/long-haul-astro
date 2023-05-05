@@ -4,46 +4,46 @@ const date = new Date();
 ---
 
 <footer class="footer">
-  <div class="footer-container container">
-    <div class="copyright">
-      <p>
-        &copy; {date.getFullYear()}
-        <a href="http://brianmaierjr.com">Brian Maier Jr.</a> Powered by
-        <a href="http://astro.build" target="_blank">Astro</a>
-      </p>
+    <div class="footer-container container">
+        <div class="copyright">
+            <p>
+                &copy; {date.getFullYear()}
+                <a href="http://brianmaierjr.com">Brian Maier Jr.</a> Powered by
+                <a href="http://astro.build" target="_blank">Astro</a>
+            </p>
+        </div>
+        <SocialMenu />
     </div>
-    <SocialMenu />
-  </div>
 </footer>
 
 <style lang="scss">
-  @use "../styles/base/_config.scss" as *;
-  .footer {
-    text-align: center;
-    padding: 2rem 0;
-    clear: both;
-    font-size: var(--step--1);
-    margin-top: var(--space-l);
-  }
-
-  .copyright p {
-    margin-bottom: var(--space-xs);
-
-    @media (min-width: 800px) {
-      margin-bottom: 0;
+    @use "../styles/base/_config.scss" as *;
+    .footer {
+        text-align: center;
+        padding: 2rem 0;
+        clear: both;
+        font-size: var(--step--1);
+        margin-top: var(--space-l);
     }
-  }
 
-  .footer-container {
-    border-top: 4px solid var(--subtle-color);
-    padding-top: var(--space-s);
-    max-width: 90%;
+    .copyright p {
+        margin-bottom: var(--space-xs);
 
-    @media (min-width: 800px) {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 800px;
+        @media (min-width: 800px) {
+            margin-bottom: 0;
+        }
     }
-  }
+
+    .footer-container {
+        border-top: 4px solid var(--subtle-color);
+        padding-top: var(--space-s);
+        max-width: 90%;
+
+        @media (min-width: 800px) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+        }
+    }
 </style>

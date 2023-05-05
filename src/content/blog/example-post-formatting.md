@@ -2,7 +2,7 @@
 title: Example Post Formatting
 layout: ../../layouts/Post.astro
 description: Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-date: 2022-11-14
+date: 2016-11-24
 ---
 
 <p class="intro"><span class="dropcap">C</span>urabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur.</p>

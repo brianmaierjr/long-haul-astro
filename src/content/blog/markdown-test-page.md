@@ -2,7 +2,7 @@
 title: Markdown Test Page
 layout: ../../layouts/Post.astro
 description: Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-date: 2022-12-3
+date: 2016-11-24
 ---
 
 ## Paragraph Styles
@@ -166,9 +166,9 @@ Wow, that was amazing...
 ```html
 <h1>This is preformatted</h1>
 <ul>
-    <li>List Item</li>
-    <li>List Item</li>
-    <li>List Item</li>
+	<li>List Item</li>
+	<li>List Item</li>
+	<li>List Item</li>
 </ul>
 ```
 
