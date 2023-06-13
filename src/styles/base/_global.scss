@@ -3,35 +3,35 @@ GLOBAL STYLES
 ***************/
 
 *:focus {
-    outline-color: var(--text-color);
-    outline-offset: 2px;
-    outline-width: 2px;
-    outline-style: dashed;
+	outline-color: var(--text-color);
+	outline-offset: 2px;
+	outline-width: 2px;
+	outline-style: dashed;
 }
 
 body {
-    font-family: var(--serif);
-    font-size: var(--step-0);
-    line-height: var(--line-height-body);
-    color: var(--text-color);
-    overflow-x: hidden;
-    background-color: var(--surface1);
-    -webkit-font-smoothing: antialiased;
+	font-family: var(--serif);
+	font-size: var(--step-0);
+	line-height: var(--line-height-body);
+	color: var(--text-color);
+	overflow-x: hidden;
+	background-color: var(--surface1);
+	-webkit-font-smoothing: antialiased;
 
-    &.modal-is-active {
-        overflow: hidden;
-    }
+	&.modal-is-active {
+		overflow: hidden;
+	}
 }
 
 // Text Selection Styling
 ::-moz-selection {
-    background: var(--primary-color);
-    color: white;
+	background: var(--primary-color);
+	color: white;
 }
 
 ::selection {
-    background: var(--primary-color);
-    color: white;
+	background: var(--primary-color);
+	color: white;
 }
 
 // Media Styling
@@ -40,30 +40,30 @@ video,
 audio,
 iframe,
 object {
-    max-width: 100%;
-    height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 // Horizontal Rule
 hr {
-    width: 100%;
-    border-color: var(--subtle-color);
+	width: 100%;
+	border-color: var(--subtle-color);
 }
 
 // Link Styling
 a {
-    color: var(--link-color);
+	color: var(--link-color);
 
-    &:hover,
-    &:focus {
-        text-decoration-style: wavy;
-        color: var(--link-accent-color);
-    }
+	&:hover,
+	&:focus {
+		text-decoration-style: wavy;
+		color: var(--link-hover);
+	}
 }
 
 // Page Styling
 .page-title {
-    margin: var(--space-s) auto var(--space-l-xl);
-    text-align: center;
-    font-weight: 900;
+	margin: var(--space-s) auto var(--space-l-xl);
+	text-align: center;
+	font-weight: 900;
 }

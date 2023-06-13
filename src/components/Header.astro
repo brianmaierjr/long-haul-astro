@@ -5,7 +5,10 @@ import ToggleColorModeButton from "./ToggleColorModeButton.astro";
 import ToggleMenuButton from "./ToggleMenuButton.astro";
 ---
 
-<header class="header">
+<header
+	class="header"
+	style={`background-image: url(/images/${settings.hero});`}
+>
 	<div class="container">
 		{
 			// H1 on homepage, P on other pages
@@ -36,7 +39,6 @@ import ToggleMenuButton from "./ToggleMenuButton.astro";
 
 	.header {
 		background-color: var(--primary-color);
-		background-image: url("/images/touring.webp");
 		background-size: cover;
 		background-position: center center;
 		color: white;

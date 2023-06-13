@@ -2,93 +2,93 @@
 import { menu } from "../data/settings";
 
 export interface Props {
-    mobile?: boolean;
+	mobile?: boolean;
 }
 
 const { mobile = false } = Astro.props;
 ---
 
 <ul class={` ${mobile ? "mobile" : ""} no-list`}>
-    {
-        menu.map((item) => (
-            <li class="element">
-                <a href={item.link}>{item.name}</a>
-            </li>
-        ))
-    }
+	{
+		menu.map((item) => (
+			<li class="element">
+				<a href={item.link}>{item.name}</a>
+			</li>
+		))
+	}
 </ul>
 
 <style lang="scss">
-    ul {
-        display: none;
-        flex-wrap: wrap;
-        line-height: 1;
-        align-items: center;
-        justify-items: flex-start;
-        gap: var(--space-2xs);
+	ul {
+		display: none;
+		flex-wrap: wrap;
+		line-height: 1;
+		align-items: center;
+		justify-items: flex-start;
+		gap: var(--space-2xs);
 
-        @media (min-width: 800px) {
-            gap: var(--space-xs);
-            display: flex;
-        }
+		@media (min-width: 800px) {
+			gap: var(--space-xs);
+			display: flex;
+		}
 
-        &.mobile {
-            display: block;
-        }
+		&.mobile {
+			display: block;
+		}
 
-        li {
-            a {
-                font-family: var(--sans-serif);
-                color: var(--white);
-                display: flex;
-                color: white;
-                font-size: var(--step--3);
-                text-decoration: none;
-                line-height: 1;
+		li {
+			a {
+				font-family: var(--sans-serif);
+				color: var(--white);
+				display: flex;
+				color: white;
+				font-size: var(--step--3);
+				text-decoration: none;
+				line-height: 1;
 
-                @media (min-width: 800px) {
-                    font-size: var(--step--1);
-                }
+				@media (min-width: 800px) {
+					font-size: var(--step--1);
+				}
 
-                &:focus,
-                &:hover {
-                    padding-left: 0.5em;
-                    color: var(--white);
+				&:focus,
+				&:hover {
+					padding-left: 0.5em;
+					color: var(--white);
 
-                    @media (min-width: 800px) {
-                        padding-left: 0;
-                        text-decoration: underline;
-                    }
-                }
+					@media (min-width: 800px) {
+						padding-left: 0;
+						text-decoration: underline;
+					}
+				}
 
-                &:focus {
-                    outline-color: currentColor;
-                }
-            }
-        }
+				&:focus {
+					outline-color: currentColor;
+				}
+			}
+		}
 
-        &.mobile {
-            li {
-                border-bottom: 1px solid var(--subtle-color);
+		&.mobile {
+			li {
+				border-bottom: 1px solid var(--subtle-color);
 
-                &:first-of-type {
-                    border-top: 1px solid var(--subtle-color);
-                }
+				&:first-of-type {
+					border-top: 1px solid var(--subtle-color);
+				}
 
-                &:focus-within {
-                    background-color: var(--subtle-color);
+				&:focus-within {
+					background-color: var(--subtle-color);
 
-                    a {
-                        padding-left: var(--space-xs);
-                    }
-                }
+					a {
+						padding-left: var(--space-xs);
+					}
+				}
 
-                a {
-                    font-weight: 300;
-                    padding: var(--space-s) 0;
-                    color: var(--text-color);
-                }
-            }
-        }
-    }
+				a {
+					font-weight: 300;
+					padding: var(--space-s) 0;
+					color: var(--text-color);
+				}
+			}
+		}
+	}
 </style>

@@ -4,61 +4,61 @@ import { Icon } from "astro-icon";
 ---
 
 <ul class="noList social">
-    {
-        social.map((item) => (
-            <>
-                <li>
-                    <a class="social__link" href={item.url} target="_blank">
-                        <span class="sr-only">
-                            {settings.title} on {item.name}
-                        </span>
-                        <Icon class="social__icon" name={item.icon} />
-                    </a>
-                </li>
-            </>
-        ))
-    }
+	{
+		social.map((item) => (
+			<>
+				<li>
+					<a class="social__link" href={item.url} target="_blank">
+						<span class="sr-only">
+							{settings.title} on {item.name}
+						</span>
+						<Icon class="social__icon" name={item.icon} />
+					</a>
+				</li>
+			</>
+		))
+	}
 </ul>
 
 <style lang="scss">
-    .social {
-        padding: 0;
-    }
+	.social {
+		padding: 0;
+	}
 
-    li {
-        display: inline-block;
-        margin-right: 8px;
+	li {
+		display: inline-block;
+		margin-right: 8px;
 
-        &:last-child {
-            margin-right: 0;
-        }
-    }
+		&:last-child {
+			margin-right: 0;
+		}
+	}
 
-    a {
-        display: inline-block;
-        width: 2em;
-        height: 2em;
-        transition: all 0.2s ease-in-out;
-        padding: 0.5em;
-        background-color: var(--link-color);
-        border-radius: 50%;
-        color: var(--surface1);
+	a {
+		display: inline-block;
+		width: 2em;
+		height: 2em;
+		transition: all 0.2s ease-in-out;
+		padding: 0.5em;
+		background-color: var(--link-color);
+		border-radius: 50%;
+		color: var(--surface1);
 
-        &:hover {
-            color: var(--surface1);
-            background-color: var(--link-accent-color);
-        }
+		&:hover {
+			color: var(--surface1);
+			background-color: var(--link-hover);
+		}
 
-        &:focus {
-            color: var(--surface1);
-            outline-color: var(--link-color);
-        }
+		&:focus {
+			color: var(--surface1);
+			outline-color: var(--link-color);
+		}
 
-        svg {
-            display: block;
-            width: 100%;
-            height: 100%;
-            color: currentColor;
-        }
-    }
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+			color: currentColor;
+		}
+	}
 </style>

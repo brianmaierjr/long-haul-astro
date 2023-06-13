@@ -15,6 +15,7 @@ Long Haul is a minimal, long form theme for Astro. I originally built this theme
 -   ✅ Generated Robots.txt via [astro-robots-txt](https://github.com/alextim/astro-lib/tree/main/packages/astro-robots-txt#readme)
 -   ✅ [XML Feed](rss.xml) for RSS Readers
 -   ✅ Featured Post Images
+-   ✅ [Netlify Forms](https://docs.netlify.com/forms/setup/) Ready
 -   ✅ Color Mode Toggle
 -   ✅ Icons Provided by [Astro Icons](https://www.astroicon.dev/)
 -   ✅ Fluid Type and Space Scale from [UTOPIA](https://utopia.fyi)
@@ -34,7 +35,23 @@ npm install
 
 ### Modify Settings
 
-The main settings can be found inside the `src/data/settings.ts` file. In this file you can edit the site title, description and url. You will also find the navigation menus in the header and footer here.
+The main settings can be found inside the `src/data/settings.ts` file. In this file you can edit the site title, description and url. You will also find the navigation menus for the header and footer here.
+
+### Customize Theme
+
+#### Change Primary Color
+
+To change the green primary color you will need to open the `_config.scss` file and change the following variables:
+
+```
+--primary-color: #2d8653; // Used for links and buttons
+--primary-color-shade: #21633e; // Used for the button hover
+--link-hover: #246b43; // Anchor hover color(separate for light and dark theme)
+```
+
+#### Change Header Image
+
+After adding your new image to the `public/images` folder, change the path of the **hero** in the `src/data/settings.ts` file to point to your new image.
 
 ## Commands
 

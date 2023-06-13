@@ -1,27 +1,27 @@
 <a class="skip-to-content-link" href="#main"> Skip to content</a>
 
 <style lang="scss">
-    @use "../styles/base/_config.scss" as *;
-    @use "../styles/modules/buttons.scss" as *;
+	@use "../styles/base/_config.scss" as *;
+	@use "../styles/modules/buttons.scss" as *;
 
-    .skip-to-content-link {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        @extend .button;
+	.skip-to-content-link {
+		position: absolute;
+		left: -10000px;
+		top: auto;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		@extend .button;
 
-        &:focus {
-            left: 1em;
-            top: 1em;
-            width: auto;
-            height: auto;
-            z-index: 10;
-            text-decoration: none;
-            outline-color: var(--white);
-            color: var(--white);
-        }
-    }
+		&:focus {
+			left: 1em;
+			top: 1em;
+			width: auto;
+			height: auto;
+			z-index: 10;
+			text-decoration: none;
+			outline-color: var(--white);
+			color: var(--white);
+		}
+	}
 </style>

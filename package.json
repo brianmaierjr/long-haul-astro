@@ -1,25 +1,24 @@
 {
-    "name": "long-haul-astro",
-    "description": "A long-form blog built with Astro",
-    "license": "MIT",
-    "version": "0.0.1",
-    "scripts": {
-        "dev": "astro dev",
-        "start": "astro dev",
-        "build": "astro build",
-        "preview": "astro preview",
-        "astro": "astro"
-    },
-    "dependencies": {
-        "@astrojs/rss": "^1.0.3",
-        "@astrojs/sitemap": "^1.0.0",
-        "astro": "^2.3.0",
-        "astro-compress": "^1.1.15",
-        "astro-icon": "^0.8.0",
-        "gsap": "^3.11.4"
-    },
-    "devDependencies": {
-        "astro-robots-txt": "^0.3.10",
-        "sass": "^1.56.1"
-    }
+	"name": "long-haul-astro",
+	"description": "A long-form blog built with Astro",
+	"license": "MIT",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/rss": "^1.0.3",
+		"@astrojs/sitemap": "^1.0.0",
+		"astro": "^2.6.3",
+		"astro-compress": "^1.1.15",
+		"astro-icon": "^0.8.0"
+	},
+	"devDependencies": {
+		"astro-robots-txt": "^0.3.10",
+		"sass": "^1.56.1"
+	}
 }

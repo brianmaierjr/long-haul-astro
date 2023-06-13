@@ -5,6 +5,11 @@ const allBlogPosts = await getCollection("blog");
 
 <div class="post-list no-list">
 	{
+		allBlogPosts && allBlogPosts.length === 0 && (
+			<p>No posts yet. Check back soon!</p>
+		)
+	}
+	{
 		allBlogPosts.map((post) => (
 			<article>
 				<time
@@ -22,7 +27,7 @@ const allBlogPosts = await getCollection("blog");
 					})}
 				</time>
 				<h3 class="post-title">
-					<a href={post.slug}>{post.data.title}</a>
+					<a href={`/blog/${post.slug}`}>{post.data.title}</a>
 				</h3>
 				<p class="post-description">{post.data.description}</p>
 			</article>
