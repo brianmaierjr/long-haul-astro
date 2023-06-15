@@ -51,7 +51,7 @@ hr {
 }
 
 // Link Styling
-a {
+:where(a) {
 	color: var(--link-color);
 
 	&:hover,
