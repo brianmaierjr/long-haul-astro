@@ -11,8 +11,6 @@ const seo = {
 	description: frontmatter.description,
 	image: frontmatter.image,
 };
-
-const oneBlogPost = await getEntryBySlug("blog", frontmatter.slug);
 ---
 
 <Layout seo={seo}>

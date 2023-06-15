@@ -91,12 +91,12 @@ import ToggleMenuButton from "./ToggleMenuButton.astro";
 			text-decoration: none;
 
 			&:hover,
-			&:focus {
+			&:focus-visible {
 				text-decoration: underline;
 				color: var(--white);
 			}
 
-			&:focus {
+			&:focus-visible {
 				outline-color: currentColor;
 			}
 		}
@@ -117,6 +117,7 @@ import ToggleMenuButton from "./ToggleMenuButton.astro";
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		gap: var(--space-2xs);
 
 		@media (min-width: 800px) {
 			flex-direction: column;

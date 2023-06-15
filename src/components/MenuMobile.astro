@@ -6,150 +6,155 @@ import MenuMain from "./MenuMain.astro";
 ---
 
 <script type="module">
-    const body = document.querySelector("body");
-    const modal = document.querySelector(".modal");
-    const modalId = modal.getAttribute("aria-labelledby");
-    const modalCloseButton = modal.querySelector(".modal__close button");
-    const modalTrigger = document.querySelector(`#${modalId}`);
+	const body = document.querySelector("body");
+	const modal = document.querySelector(".modal");
+	const modalId = modal.getAttribute("aria-labelledby");
+	const modalCloseButton = modal.querySelector(".modal__close button");
+	const modalTrigger = document.querySelector(`#${modalId}`);
 
-    const teleportToRoot = (element) => {
-        element.remove();
-        body.appendChild(element);
-    };
-    const getKeyboardFocusableElements = (element) => {
-        return [
-            ...element.querySelectorAll(
-                'a, button, input, textarea, select, details,[tabindex]:not([tabindex="-1"])'
-            ),
-        ].filter((el) => !el.hasAttribute("disabled"));
-    };
-    const trapFocus = (event) => {
-        const focusables = getKeyboardFocusableElements(modal);
-        const firstFocusable = focusables[0];
-        const lastFocusable = focusables[focusables.length - 1];
-        if (
-            document.activeElement === lastFocusable &&
-            event.key === "Tab" &&
-            !event.shiftKey
-        ) {
-            event.preventDefault();
-            firstFocusable.focus();
-        }
-        if (
-            document.activeElement === firstFocusable &&
-            event.key === "Tab" &&
-            event.shiftKey
-        ) {
-            event.preventDefault();
-            lastFocusable.focus();
-        }
-    };
-    const openModal = (_) => {
-        const focusables = getKeyboardFocusableElements(modal);
-        const firstFocusable = focusables[0];
-        modal.classList.add("show");
-        body.classList.add("modal-is-active");
-        firstFocusable.focus();
-        document.addEventListener("keydown", trapFocus);
-        modal.addEventListener("keydown", (event) => {
-            if (event.key === "Escape") {
-                closeModal();
-            }
-        });
-    };
-    const closeModal = (_) => {
-        modal.classList.remove("show");
-        body.classList.remove("modal-is-active");
-        modalTrigger.focus({ preventScroll: true });
-        document.removeEventListener("keydown", trapFocus);
-    };
-    teleportToRoot(modal);
-    modalTrigger.addEventListener("click", openModal);
-    modalCloseButton.addEventListener("click", closeModal);
-    modal.addEventListener("click", (event) => {
-        if (!event.target.closest(".modal__content")) {
-            closeModal();
-        }
-    });
-    window.closeModal = closeModal;
+	const teleportToRoot = (element) => {
+		element.remove();
+		body.appendChild(element);
+	};
+	const getKeyboardFocusableElements = (element) => {
+		return [
+			...element.querySelectorAll(
+				'a, button, input, textarea, select, details,[tabindex]:not([tabindex="-1"])'
+			),
+		].filter((el) => !el.hasAttribute("disabled"));
+	};
+	const trapFocus = (event) => {
+		const focusables = getKeyboardFocusableElements(modal);
+		const firstFocusable = focusables[0];
+		const lastFocusable = focusables[focusables.length - 1];
+		if (
+			document.activeElement === lastFocusable &&
+			event.key === "Tab" &&
+			!event.shiftKey
+		) {
+			event.preventDefault();
+			firstFocusable.focus();
+		}
+		if (
+			document.activeElement === firstFocusable &&
+			event.key === "Tab" &&
+			event.shiftKey
+		) {
+			event.preventDefault();
+			lastFocusable.focus();
+		}
+	};
+	const openModal = (_) => {
+		const focusables = getKeyboardFocusableElements(modal);
+		const firstFocusable = focusables[0];
+		modal.classList.add("show");
+		body.classList.add("modal-is-active");
+		firstFocusable.focus();
+		document.addEventListener("keydown", trapFocus);
+		modal.addEventListener("keydown", (event) => {
+			if (event.key === "Escape") {
+				closeModal();
+			}
+		});
+	};
+	const closeModal = (_) => {
+		modal.classList.remove("show");
+		body.classList.remove("modal-is-active");
+		modalTrigger.focus({ preventScroll: true });
+		document.removeEventListener("keydown", trapFocus);
+	};
+	teleportToRoot(modal);
+	modalTrigger.addEventListener("click", openModal);
+	modalCloseButton.addEventListener("click", closeModal);
+	modal.addEventListener("click", (event) => {
+		if (!event.target.closest(".modal__content")) {
+			closeModal();
+		}
+	});
+	window.closeModal = closeModal;
 </script>
 
 <nav
-    class="modal mobile-nav flow"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="mobile-menu-trigger"
+	class="modal mobile-nav flow"
+	role="dialog"
+	aria-modal="true"
+	aria-labelledby="mobile-menu-trigger"
 >
-    <div class="nav-header">
-        <h2 class="header__title">{settings.title}</h2>
-        <div class="modal__close">
-            <button class="toggle__btn">
-                <span class="sr-only">Close Mobile Navigation Menu</span>
-                <Icon name="ic:baseline-close" />
-            </button>
-        </div>
-    </div>
+	<div class="nav-header">
+		<h2 class="header__title">{settings.title}</h2>
+		<div class="modal__close">
+			<button class="toggle__btn">
+				<span class="sr-only">Close Mobile Navigation Menu</span>
+				<Icon name="ic:baseline-close" />
+			</button>
+		</div>
+	</div>
 
-    <MenuMain mobile />
-    <SocialMenu />
+	<MenuMain mobile />
+	<SocialMenu />
 </nav>
 
 <style lang="scss">
-    .modal {
-        height: 0;
-        position: fixed;
-        visibility: hidden;
-        width: 0;
-        height: 0;
-        z-index: -10;
-        top: 0;
-        left: 0;
-        background-color: var(--surface1);
-        padding: var(--space-m);
-        overflow: auto;
-        color: var(--text-color);
+	.modal {
+		height: 0;
+		position: fixed;
+		visibility: hidden;
+		width: 100dvw;
+		height: 100dvh;
+		z-index: -10;
+		top: 0;
+		left: 100vw;
+		background-color: var(--surface1);
+		padding: var(--space-m);
+		overflow: auto;
+		color: var(--text-color);
+		transition: all 0.3s ease-in-out;
+		opacity: 0;
 
-        &.show {
-            width: 100vw;
-            height: 100vh;
-            z-index: 10;
-            visibility: visible;
-        }
+		&.show {
+			top: 0;
+			left: 0;
+			width: 100dvw;
+			height: 100dvh;
+			z-index: 10;
+			visibility: visible;
+			opacity: 1;
+		}
 
-        .mobile-nav-heading {
-            margin: 0;
-        }
-    }
+		.mobile-nav-heading {
+			margin: 0;
+		}
+	}
 
-    .nav-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: var(--space-l);
-    }
+	.nav-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: var(--space-l);
+	}
 
-    .toggle__btn {
-        border-radius: 10em;
-        display: flex;
-        border: none;
-        color: currentColor;
-        white-space: nowrap;
-        align-items: center;
-        height: 3rem;
-        width: 3rem;
-        padding: var(--space-2xs);
-        gap: var(--space-3xs);
-        background-color: var(--subtle-color);
-        font-size: var(--step--2);
+	.toggle__btn {
+		border-radius: 10em;
+		display: flex;
+		border: none;
+		color: currentColor;
+		white-space: nowrap;
+		align-items: center;
+		height: 3rem;
+		width: 3rem;
+		padding: var(--space-2xs);
+		gap: var(--space-3xs);
+		background-color: var(--subtle-color);
+		font-size: var(--step--2);
 
-        svg {
-            flex: auto;
-            height: 100%;
-            width: 100%;
+		svg {
+			flex: auto;
+			height: 100%;
+			width: 100%;
 
-            path {
-                fill: var(--white);
-            }
-        }
-    }
+			path {
+				fill: var(--white);
+			}
+		}
+	}
 </style>

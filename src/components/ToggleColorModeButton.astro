@@ -4,83 +4,83 @@ import { Icon } from "astro-icon";
 
 <!--- Light mode button --->
 <button class="color-mode__btn toggle__btn" aria-label="Toggle light mode">
-    <Icon name="ph:moon" class="color-white dark-mode" /><span class="sr-only"
-        >Dark</span
-    >
-    <Icon name="ph:sun" class="color-white light-mode" /><span class="sr-only"
-        >Light</span
-    >
+	<Icon name="ph:moon" class="color-white dark-mode" /><span class="sr-only"
+		>Dark</span
+	>
+	<Icon name="ph:sun" class="color-white light-mode" /><span class="sr-only"
+		>Light</span
+	>
 </button>
 
 <style lang="scss">
-    :root[color-mode="light"] {
-        .light-mode {
-            display: none;
-        }
-    }
-    :root[color-mode="dark"] {
-        .dark-mode {
-            display: none;
-        }
-    }
-    .toggle__btn {
-        border-radius: 10em;
-        display: flex;
-        border: none;
-        color: currentColor;
-        white-space: nowrap;
-        align-items: center;
-        height: 3rem;
-        width: 3rem;
-        padding: var(--space-2xs);
-        gap: var(--space-3xs);
-        background-color: rgba(0, 0, 0, 0.3);
-        font-size: var(--step--2);
+	:root[color-mode="light"] {
+		.light-mode {
+			display: none;
+		}
+	}
+	:root[color-mode="dark"] {
+		.dark-mode {
+			display: none;
+		}
+	}
+	.toggle__btn {
+		border-radius: 10em;
+		display: flex;
+		border: none;
+		color: currentColor;
+		white-space: nowrap;
+		align-items: center;
+		height: 3rem;
+		width: 3rem;
+		padding: var(--space-2xs);
+		gap: var(--space-3xs);
+		background-color: rgba(0, 0, 0, 0.3);
+		font-size: var(--step--2);
 
-        svg {
-            flex: auto;
-            height: 100%;
-            width: 100%;
+		svg {
+			flex: auto;
+			height: 100%;
+			width: 100%;
 
-            path {
-                fill: var(--white);
-            }
-        }
+			path {
+				fill: var(--white);
+			}
+		}
 
-        &:focus {
-            outline-color: var(--white);
-        }
-    }
+		&:focus-visible {
+			outline-color: var(--white);
+		}
+	}
 </style>
 
 <script is:inline>
-    if (window.CSS && CSS.supports("color", "var(--primary)")) {
-        var toggleColorMode = function toggleColorMode(e) {
-            // Switch to Light Mode
-            if (
-                document.documentElement.getAttribute("color-mode") === "dark"
-            ) {
-                // Sets the custom html attribute
-                document.documentElement.setAttribute("color-mode", "light"); // Sets the user's preference in local storage
-                localStorage.setItem("color-mode", "light");
-                document.querySelector(".light-mode").style.display = "none";
-                document.querySelector(".dark-mode").style.display = "block";
-                return;
-            } else {
-                /* Switch to Dark Mode */
-                document.documentElement.setAttribute("color-mode", "dark"); // Sets the user's preference in local storage
-                localStorage.setItem("color-mode", "dark");
-                document.querySelector(".dark-mode").style.display = "none";
-                document.querySelector(".light-mode").style.display = "block";
-            }
-        };
+	if (window.CSS && CSS.supports("color", "var(--primary)")) {
+		var toggleColorMode = function toggleColorMode(e) {
+			// Switch to Light Mode
+			if (
+				document.documentElement.getAttribute("color-mode") === "dark"
+			) {
+				// Sets the custom html attribute
+				document.documentElement.setAttribute("color-mode", "light"); // Sets the user's preference in local storage
+				localStorage.setItem("color-mode", "light");
+				document.querySelector(".light-mode").style.display = "none";
+				document.querySelector(".dark-mode").style.display = "block";
+				return;
+			} else {
+				/* Switch to Dark Mode */
+				document.documentElement.setAttribute("color-mode", "dark"); // Sets the user's preference in local storage
+				localStorage.setItem("color-mode", "dark");
+				document.querySelector(".dark-mode").style.display = "none";
+				document.querySelector(".light-mode").style.display = "block";
+			}
+		};
 
-        // Get the button in the DOM
-        var toggleColorButton = document.querySelector(".color-mode__btn");
-        toggleColorButton.addEventListener("click", toggleColorMode);
-    } else {
-        // If the feature isn't supported, then we hide the toggle buttons
-        var btnContainer = document.querySelector(".color-mode__header");
-        btnContainer.style.display = "none";
-    }
+		// Get the button in the DOM
+		var toggleColorButton = document.querySelector(".color-mode__btn");
+		toggleColorButton.addEventListener("click", toggleColorMode);
+	} else {
+		// If the feature isn't supported, then we hide the toggle buttons
+		var btnContainer = document.querySelector(".color-mode__header");
+		btnContainer.style.display = "none";
+	}
 </script>

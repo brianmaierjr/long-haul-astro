@@ -50,7 +50,7 @@ const { mobile = false } = Astro.props;
 					font-size: var(--step--1);
 				}
 
-				&:focus,
+				&:focus-visible-visible,
 				&:hover {
 					padding-left: 0.5em;
 					color: var(--white);
@@ -61,7 +61,7 @@ const { mobile = false } = Astro.props;
 					}
 				}
 
-				&:focus {
+				&:focus-visible {
 					outline-color: currentColor;
 				}
 			}
@@ -75,7 +75,7 @@ const { mobile = false } = Astro.props;
 					border-top: 1px solid var(--subtle-color);
 				}
 
-				&:focus-within {
+				&:focus-visible-within {
 					background-color: var(--subtle-color);
 
 					a {

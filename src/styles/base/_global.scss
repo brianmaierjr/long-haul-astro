@@ -2,7 +2,7 @@
 GLOBAL STYLES
 ***************/
 
-*:focus {
+*:focus-visible {
 	outline-color: var(--text-color);
 	outline-offset: 2px;
 	outline-width: 2px;
@@ -55,7 +55,7 @@ a {
 	color: var(--link-color);
 
 	&:hover,
-	&:focus {
+	&:focus-visible {
 		text-decoration-style: wavy;
 		color: var(--link-hover);
 	}

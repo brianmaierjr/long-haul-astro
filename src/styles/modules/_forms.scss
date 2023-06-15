@@ -3,37 +3,37 @@ FORM STYLING
 ***************/
 
 label {
-    display: block;
-    margin-bottom: var(--space-3xs);
+	display: block;
+	margin-bottom: var(--space-3xs);
 }
 
 input,
 textarea {
-    background: var(--subtle-color);
-    color: currentColor;
-    padding: 5px;
-    outline: none;
-    border: none;
-    height: auto;
-    padding: var(--space-2xs);
-    width: 300px;
+	background: var(--subtle-color);
+	color: currentColor;
+	padding: 5px;
+	outline: none;
+	border: none;
+	height: auto;
+	padding: var(--space-2xs);
+	width: 300px;
 
-    &:focus {
-        border: 1px solid var(--primary-color);
-    }
+	&:focus-visible {
+		border: 1px solid var(--primary-color);
+	}
 }
 
 textarea {
-    // min-height: 6em;
+	// min-height: 6em;
 }
 
 input[type="submit"] {
-    width: auto;
-    display: flex;
-    margin-left: auto;
-    margin-top: var(--space-s);
+	width: auto;
+	display: flex;
+	margin-left: auto;
+	margin-top: var(--space-s);
 }
 
 *:where(input, textarea) + label {
-    margin-top: var(--space-s);
+	margin-top: var(--space-s);
 }
