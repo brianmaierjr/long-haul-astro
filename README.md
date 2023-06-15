@@ -4,6 +4,8 @@
 
 Long Haul is a minimal, long form theme for Astro. I originally built this theme for Jekyll about 8 years ago(yikes). Somehow, that theme has almost 700 forks and almost 600 stars [on GitHub](https://github.com/brianmaierjr/long-haul) so I figured I'd bring it into the future with Astro 🚀.
 
+[View Demo](https://long-haul-astro.netlify.app/)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1f6f43d4-fbc7-4877-bf95-0f48a30bd04d/deploy-status)](https://app.netlify.com/sites/long-haul-astro/deploys)
 
 ## Features
