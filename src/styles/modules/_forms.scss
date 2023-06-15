@@ -34,6 +34,6 @@ input[type="submit"] {
 	margin-top: var(--space-s);
 }
 
-*:where(input, textarea) + label {
+*:where(input, textarea) + label:not(:first-child) {
 	margin-top: var(--space-s);
 }
