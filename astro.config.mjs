@@ -16,4 +16,7 @@ export default defineConfig({
 			wrap: true,
 		},
 	},
+	experimental: {
+		viewTransitions: true,
+	},
 });

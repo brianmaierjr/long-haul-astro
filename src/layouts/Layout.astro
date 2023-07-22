@@ -7,21 +7,21 @@ import MenuMobile from "../components/MenuMobile.astro";
 import type { Props as BaseHeadProps } from "../components/BaseHead.astro";
 
 export interface Props {
-    seo?: BaseHeadProps;
+	seo?: BaseHeadProps;
 }
 
 const { seo } = Astro.props;
 ---
 
 <html lang="en" color-mode="light">
-    <BaseHead {...seo} />
-    <body>
-        <SkipToLink />
-        <Header />
-        <main id="main">
-            <slot />
-        </main>
-        <Footer />
-        <MenuMobile />
-    </body>
+	<BaseHead {...seo} />
+	<body>
+		<SkipToLink />
+		<Header />
+		<main id="main">
+			<slot />
+		</main>
+		<Footer />
+		<MenuMobile />
+	</body>
 </html>
