@@ -1,6 +1,5 @@
 ---
 import { settings } from "../data/settings";
-import { ViewTransitions } from "astro:transitions";
 import "../styles/style.scss";
 
 export interface Props {
@@ -36,9 +35,6 @@ const canonicalURL =
 	<meta name="title" content={title} />
 	<meta name="description" content={description || settings.description} />
 	<meta name="generator" content={Astro.generator} />
-
-	<!-- View Transitions -->
-	<ViewTransitions />
 
 	<!-- Sitemap -->
 	<link rel="sitemap" href="/sitemap.xml" />
