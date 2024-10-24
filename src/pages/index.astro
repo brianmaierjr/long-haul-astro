@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PostList from "../components/PostList.astro";
+import RecentPostList from "../components/RecentPostList.astro";
 ---
 
 <Layout>
 	<div class="container">
 		<h2 class="page-title h1">Recent Posts</h2>
-		<PostList />
+		<RecentPostList />
+		<a href="/posts" class="button">View All Posts</a>
 	</div>
 </Layout>

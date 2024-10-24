@@ -1,0 +1,80 @@
+---
+import { getCollection } from "astro:content";
+const allBlogPosts = await getCollection("blog");
+// Sort the posts by their `date` property in descending order
+allBlogPosts.sort((a: any , b: any) => b.data.date - a.data.date);
+
+// Get the 5 most recent posts
+const recentPosts = allBlogPosts.slice(0,3);
+---
+
+<div class="post-list no-list">
+	{
+		allBlogPosts && allBlogPosts.length === 0 && (
+			<p>No posts yet. Check back soon!</p>
+		)
+	}
+	{
+		recentPosts.map((post) => (
+			<article>
+				<time
+					datetime={post.data.date.toLocaleDateString("en-us", {
+						year: "numeric",
+						month: "short",
+						day: "numeric",
+					})}
+					class="post-date"
+				>
+					{post.data.date.toLocaleDateString("en-us", {
+						year: "numeric",
+						month: "short",
+						day: "numeric",
+					})}
+				</time>
+				<h3 class="post-title">
+					<a href={`/blog/${post.slug}`}>{post.data.title}</a>
+				</h3>
+				<p class="post-description">{post.data.description}</p>
+			</article>
+		))
+	}
+</div>
+
+<style lang="scss">
+	article {
+		margin-bottom: var(--space-xl);
+		position: relative;
+
+		&:not(:last-child):before {
+			content: "";
+			position: absolute;
+			bottom: calc(var(--space-m) * -1);
+			left: 0;
+			background: var(--subtle-color);
+			height: 0.2em;
+			width: 4rem;
+		}
+
+		.post-title {
+			margin-top: 0;
+			margin-bottom: var(--space-xs);
+
+			a {
+				text-decoration: none;
+				font-weight: 800;
+
+				&:hover,
+				&:focus-visible {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.post-date {
+			color: var(--text-accent-color);
+			font-family: var(--sans-serif);
+			font-weight: 300;
+			font-size: var(--step--1);
+		}
+	}
+</style>
